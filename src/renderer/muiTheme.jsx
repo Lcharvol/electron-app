@@ -24,10 +24,21 @@ const theme = createTheme({
       },
       variants: [
         {
+          props: { variant: 'primary' },
+          style: {
+            backgroundColor: colors.secondary.normal,
+            color: colors.white,
+            '&:hover': { backgroundColor: colors.secondary.dark },
+          },
+        },
+        {
           props: { variant: 'white' },
           style: {
             backgroundColor: colors.white,
             color: colors.primary.dark,
+            '&:hover': {
+              backgroundColor: colors.grey.veryLight,
+            },
           },
         },
       ],

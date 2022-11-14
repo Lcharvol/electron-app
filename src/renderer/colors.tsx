@@ -6,6 +6,12 @@ const colors = {
     veryLight: 'rgb(61,66,72)',
     ultraLight: '#585c60',
   },
+  font: {
+    main: '#5F80fb',
+    normal: 'rgb(252,252,252)',
+    secondary: 'rgb(61,66,72)',
+    disabled: 'rgb(170,170,170)',
+  },
   secondary: {
     background: '#f5f7ff',
     ultralight: '#dfe6ff',
@@ -15,6 +21,13 @@ const colors = {
     normal: '#4B70fb',
     deep: '#3861fb',
     dark: '#3257e1',
+  },
+  grey: {
+    ultralight: 'rgb(230,230,230)',
+    veryLight: 'rgb(215,215,215)',
+    light: 'rgb(200,200,200)',
+    medium: 'rgb(185,185,185)',
+    normal: 'rgb(170,170,170)',
   },
   white: 'rgb(252,252,252)',
   black: 'rgb(25,25,25)',

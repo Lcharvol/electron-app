@@ -11,6 +11,8 @@ interface TypographyProps extends MuiTypographyProps {
 }
 type Props = {
   weight?: WeightProps;
+  color?: string;
+  className?: string; // styled-component className
 } & TypographyProps;
 
 const StyledTypography = styled(MuiTypography)`
@@ -21,11 +23,17 @@ const Typography: React.FC<Props> = ({
   weight = 'heavy',
   children,
   variant,
+  color,
+  className,
 }) => {
   const fontWeight = fonts.weightMap[weight];
 
   return (
-    <StyledTypography variant={variant} style={{ fontWeight }}>
+    <StyledTypography
+      className={className}
+      variant={variant}
+      style={{ fontWeight, color }}
+    >
       {children}
     </StyledTypography>
   );

@@ -1,60 +1,40 @@
 import React from 'react';
-import { Grid, FeedbackButton, PageLayout, Button, Typography } from '@/UI';
-import { fakeApi } from '@/faker';
-import styled from 'styled-components';
-import colors from '@/colors';
-import { mdiApple, mdiGoogle } from '@mdi/js';
+import { PageLayout, PageStepper } from '@/UI';
 
-const StyledButton = styled(Button)`
-  background-color: ${colors.white};
-  color: ${colors.black};
-`;
+import useAuth from '@/contexts/auth';
+import Home from './Home';
+import { Container, Content } from './styles';
+import Subscribe from './Subscribe';
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
-
-const Content = styled.div`
-  width: 20rem;
-`;
 const Login = () => {
+  const { user, loading, error, login, signUp, logout } = useAuth();
+  const pages = [
+    {
+      pageNumber: 0,
+      component: Home,
+    },
+    {
+      pageNumber: 1,
+      component: Subscribe,
+    },
+  ];
   return (
-    <PageLayout>
-      <Container>
-        <Content>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Typography>Bienvenue dans Teame👋</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography weight="light">
-                Teame est un outil de gestion pour les freelances et les
-                entreprises 👨‍💻
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <StyledButton variant="white" fullWidth startIconPath={mdiGoogle}>
-                Continuer avec Google
-              </StyledButton>
-            </Grid>
-            <Grid item xs={12}>
-              <StyledButton variant="white" fullWidth startIconPath={mdiApple}>
-                Continuer avec Apple
-              </StyledButton>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography weight="light" variant="caption">
-                Vous pouvez aussi continuer avec une adresse e-mail
-              </Typography>
-            </Grid>
-          </Grid>
-        </Content>
-      </Container>
-    </PageLayout>
+    <Container>
+      <Content>
+        <Home login={login} />
+      </Content>
+    </Container>
   );
+  // return (
+  //   <PageStepper
+  //     pages={pages}
+  //     layout={(children) => (
+  //       <Container>
+  //         <Content>{children}</Content>
+  //       </Container>
+  //     )}
+  //   />
+  // );
 };
 
 export default Login;

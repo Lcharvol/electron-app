@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import React, { ReactNode, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { constantRoutes } from '@/constants';
 import { Home, Projects, Login } from '@/pages';
-import { useAuth } from '@/hooks';
+import useAuth from '@/contexts/auth';
 import { AppSidenav, TopMenu } from '@/containers';
 import { fakeUser } from '@/faker';
 import { mdiApps } from '@mdi/js';
@@ -11,30 +11,31 @@ import { Button, PageLayout } from '@/UI';
 import colors from '@/colors';
 
 const AppTopMenu = () => {
+  const { logout } = useAuth();
   return (
     <TopMenu
       left={<Icon path={mdiApps} size={1.5} color={colors.secondary.normal} />}
-      right={<Button href="/login">Login</Button>}
+      right={<Button onClick={logout}>Logout</Button>}
     />
   );
 };
-const Layout = ({ children }) => (
+const Layout = ({ children }: { children: ReactNode }) => (
   <PageLayout menu={<AppSidenav user={fakeUser} />} topMenu={<AppTopMenu />}>
     {children}
   </PageLayout>
 );
 
-const ProtectedRoute = ({ element }) => {
-  const { token } = useAuth();
-  const location = useLocation();
-  // if (!token) {
-  //   return <Navigate to="/login" replace state={{ from: location }} />;
-  // }
+// As the router is wrapped with the provider,
+// we can use our hook to check for a logged in user.
+const ProtectedRoute = ({ children }: { children: ReactNode }): JSX.Element => {
+  const { user } = useAuth();
+  if (!user) return <Navigate to="/login" />;
 
-  return <Route element={element} />;
+  return <>{children}</>;
 };
 
 const Router = () => {
+  const { logout } = useAuth();
   return (
     <Suspense fallback={<div />}>
       <Routes>
@@ -42,20 +43,31 @@ const Router = () => {
         <Route
           path={constantRoutes.PROJECTS}
           element={
-            <Layout>
-              <Projects />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <Projects />
+              </Layout>
+            </ProtectedRoute>
           }
         />
         <Route
           path={constantRoutes.HOME}
           element={
-            <Layout>
-              <Home />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <Home />
+              </Layout>
+            </ProtectedRoute>
           }
         />
-        <Route path="*" element={<>Not found</>} />
+        <Route
+          path="*"
+          element={
+            <>
+              Not found<Button onClick={logout}>Logout</Button>
+            </>
+          }
+        />
       </Routes>
     </Suspense>
   );

@@ -13,6 +13,7 @@ const StyledIcon = styled(Icon)`
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     white: true;
+    primary: true;
   }
 }
 export interface ButtonProps extends MuiButtonProps {

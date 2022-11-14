@@ -9,6 +9,7 @@ import PageLayout from './PageLayout';
 import Sidenav from './Sidenav';
 import Typography from './Typography';
 import { TextField } from './Inputs';
+import PageStepper from './PageStepper';
 
 export {
   Button,
@@ -22,4 +23,5 @@ export {
   Divider,
   CardHeader,
   TextField,
+  PageStepper,
 };
