@@ -8,7 +8,7 @@ const theme = createTheme({
   palette: {
     type: 'dark',
     background: {
-      paper: colors.primary.normal,
+      paper: colors.primary.dark,
     },
     shape: {
       borderRadius: '0.6rem',

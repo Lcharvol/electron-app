@@ -3,6 +3,7 @@ import { Grid, Button, Typography, FeedbackButton } from '@/UI';
 import styled from 'styled-components';
 import colors from '@/colors';
 import { mdiApple, mdiGoogle } from '@mdi/js';
+import { useNotification } from '@/hooks';
 
 const StyledButton = styled(FeedbackButton)`
   background-color: ${colors.white};
@@ -10,9 +11,11 @@ const StyledButton = styled(FeedbackButton)`
 `;
 interface HomeProps {
   goToNextStep?: () => void;
-  login: () => void;
+  login: (data: { email: string; password: string }) => void;
 }
 const Home = ({ goToNextStep, login }: HomeProps) => {
+  const { openNotification } = useNotification();
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
@@ -35,7 +38,17 @@ const Home = ({ goToNextStep, login }: HomeProps) => {
         </StyledButton>
       </Grid>
       <Grid item xs={12}>
-        <StyledButton variant="white" fullWidth startIconPath={mdiApple}>
+        <StyledButton
+          variant="white"
+          fullWidth
+          startIconPath={mdiApple}
+          onClick={() =>
+            openNotification({
+              title: 'ceci est un titre',
+              body: 'ceci est un body',
+            })
+          }
+        >
           Continuer avec Apple
         </StyledButton>
       </Grid>

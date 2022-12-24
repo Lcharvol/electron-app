@@ -1,5 +1,6 @@
 const colors = {
   primary: {
+    verydark: 'rgb(13, 15, 20)',
     dark: 'rgb(23, 27, 36)',
     normal: 'rgb(31,36,44)',
     light: 'rgb(40,45,52)',
