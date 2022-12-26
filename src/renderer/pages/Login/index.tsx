@@ -1,5 +1,4 @@
 import React from 'react';
-import { PageLayout, PageStepper } from '@/UI';
 
 import useAuth from '@/contexts/auth';
 import Home from './Home';
@@ -25,16 +24,6 @@ const Login = () => {
       </Content>
     </Container>
   );
-  // return (
-  //   <PageStepper
-  //     pages={pages}
-  //     layout={(children) => (
-  //       <Container>
-  //         <Content>{children}</Content>
-  //       </Container>
-  //     )}
-  //   />
-  // );
 };
 
 export default Login;

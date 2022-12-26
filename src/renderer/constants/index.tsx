@@ -1,3 +1,3 @@
-import * as constantRoutes from "./routes";
+import * as constantRoutes from './routes';
 
 export { constantRoutes };

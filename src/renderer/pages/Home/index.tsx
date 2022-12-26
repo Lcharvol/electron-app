@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { Button, Card, CardHeader, FeedbackButton, Grid } from '@/UI';
-import { CreditCard } from '@/components';
+import { Card, CardHeader, FeedbackButton, Grid } from '@/UI';
 
 const Home = () => {
   return (
     <Grid container spacing={2} sx={{ height: '30rem' }}>
-      <Grid item xs={12}>
-        <CreditCard depth={3} />
-      </Grid>
       <Grid item xs={12}>
         <Card
           sx={{ height: '100%' }}

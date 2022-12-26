@@ -1,9 +1,16 @@
 const colors = {
+  // primary: {
+  //   verydark: 'rgb(13, 15, 20)',
+  //   dark: 'rgb(23, 27, 36)',
+  //   normal: 'rgb(31,36,44)',
+  //   light: 'rgb(40,45,52)',
+  //   veryLight: 'rgb(61,66,72)',
+  //   ultraLight: '#585c60',
+  // },
   primary: {
-    verydark: 'rgb(13, 15, 20)',
-    dark: 'rgb(23, 27, 36)',
-    normal: 'rgb(31,36,44)',
-    light: 'rgb(40,45,52)',
+    dark: 'rgb(19, 20, 21)',
+    normal: 'rgb(28,29,31)',
+    light: 'rgb(32,33,35)',
     veryLight: 'rgb(61,66,72)',
     ultraLight: '#585c60',
   },

@@ -21,7 +21,7 @@ const UserHeader = ({
         alignItems="center"
         justifyContent="center"
       >
-        <Avatar src={user.profilePictureUrl} variant="rounded">
+        <Avatar src={user.profilePictureUrl} variant="circular">
           {!user.profilePictureUrl && user.firstName}
         </Avatar>
       </Grid>
@@ -34,7 +34,9 @@ const UserHeader = ({
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography variant="subtitle1">{user.function}</Typography>
+              <Typography variant="subtitle1" weight="light">
+                {user.function}
+              </Typography>
             </Grid>
           </Grid>
         </Grid>

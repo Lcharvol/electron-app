@@ -31,7 +31,7 @@ const IconContainer = styled.div<{ $isActive: boolean }>`
 `;
 
 const Label = styled.div<{ $isActive: boolean }>`
-  padding-left: ${({ $isActive }) => ($isActive ? 2 : 0)}rem;
+  padding-right: ${({ $isActive }) => ($isActive ? 1 : 0)}rem;
   transition: all 0.3s ease-in-out;
 `;
 const getStartIcon = ({

@@ -26,10 +26,12 @@ export const StyledNavLink = styled(NavLink)<StyledElemProps>`
   & > * {
     transition: all 0.1s ease-in-out;
     color: ${({ $isSelected }) =>
-      $isSelected ? colors.secondary.normal : colors.primary.veryLight};
+      $isSelected ? colors.white : colors.primary.veryLight};
   }
+  background-color: ${({ $isSelected }) =>
+    $isSelected && colors.primary.normal};
   &:hover {
-    background-color: ${() => colors.primary.veryLight};
+    background-color: ${() => colors.primary.normal};
   }
   &:hover > * {
     color: ${() => colors.white};
