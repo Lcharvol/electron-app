@@ -7,7 +7,7 @@ import {
 import React from 'react';
 
 import { constantRoutes } from '@/constants';
-import { Sidenav } from '@/UI';
+import { Sidenav, Card } from '@/UI';
 import useAuth from '@/contexts/auth';
 import UserHeader from '../UserHeader';
 
@@ -50,6 +50,7 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       routes={routes}
       isSmall={isSmall}
       topNode={<UserHeader user={user} hasDivider isSmall={isSmall} />}
+      body={<Card variant="filled" />}
       actions={actions}
     />
   );

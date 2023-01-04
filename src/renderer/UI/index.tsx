@@ -10,6 +10,9 @@ import Sidenav from './Sidenav';
 import Typography from './Typography';
 import { TextField } from './Inputs';
 import PageStepper from './PageStepper';
+import PageHeader from './PageHeader';
+import IconButton from './IconButton';
+import Tabs from './Tabs';
 
 export {
   Button,
@@ -20,8 +23,11 @@ export {
   Sidenav,
   Avatar,
   Typography,
+  IconButton,
   Divider,
   CardHeader,
   TextField,
   PageStepper,
+  PageHeader,
+  Tabs,
 };

@@ -7,6 +7,7 @@ export type RouteType = {
   label?: string;
   path: string;
   count?: number;
+  onClick?: () => void;
 };
 
 export type ActionType = {

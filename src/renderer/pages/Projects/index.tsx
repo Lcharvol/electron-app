@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { Grid } from "@/UI";
+import { PageHeader, Card } from '@/UI';
 
 const Projects = () => {
-	return <Grid container spacing={2} sx={{ height: "30rem" }} />;
+  return (
+    <>
+      <PageHeader title="Projects" />
+      <Card />
+    </>
+  );
 };
 
 export default Projects;

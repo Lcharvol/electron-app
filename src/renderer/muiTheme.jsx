@@ -8,7 +8,7 @@ const theme = createTheme({
   palette: {
     type: 'dark',
     background: {
-      paper: colors.primary.normal,
+      paper: colors.primary.dark,
     },
     shape: {
       borderRadius: '0.6rem',
@@ -20,7 +20,7 @@ const theme = createTheme({
   components: {
     MuiButton: {
       defaultProps: {
-        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true,
       },
       variants: [
         {
@@ -43,11 +43,54 @@ const theme = createTheme({
         },
       ],
     },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.grey.dark,
+          opacity: 0.2,
+          height: '0.1px',
+        },
+      },
+    },
+    MuiCard: {
+      variants: [
+        {
+          props: { variant: 'filled' },
+          style: {
+            backgroundColor: colors.secondary.medium,
+          },
+        },
+        {
+          props: { variant: 'noPadding' },
+          style: {
+            '.MuiCardContent-root': {
+              padding: 0,
+            },
+          },
+        },
+      ],
+    },
     MuiInputBase: {
       styleOverrides: {
         input: {
           // color: colors.secondary.normal,
         },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          color: colors.grey.dark,
+          '&.Mui-selected': {
+            color: colors.white,
+          },
+        },
+      },
+    },
+    MuiTabPanel: {
+      styleOverrides: {
+        root: { background: 'red' },
       },
     },
   },
@@ -61,7 +104,8 @@ const theme = createTheme({
       color: colors.white,
     },
     subtitle1: {
-      color: colors.primary.veryLight,
+      color: colors.grey.dark,
+      fontSize: 13,
     },
   },
 });

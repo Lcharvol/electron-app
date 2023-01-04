@@ -12,9 +12,8 @@ type ItemProps = {
 };
 
 const Item = ({ route, isSmall, isSelected }: ItemProps) => {
-  const Container = route ? StyledNavLink : 'div';
   return (
-    <Container
+    <StyledNavLink
       to={route.path}
       exact={route?.exact}
       $isSmall={isSmall}
@@ -30,7 +29,7 @@ const Item = ({ route, isSmall, isSelected }: ItemProps) => {
       >
         {route.label}
       </Label>
-    </Container>
+    </StyledNavLink>
   );
 };
 

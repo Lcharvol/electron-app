@@ -3,12 +3,14 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { constantRoutes } from '@/constants';
 import { Home, Projects, Login, Settings } from '@/pages';
 import useAuth from '@/contexts/auth';
-import { AppSidenav } from '@/containers';
+import { AppSidenav, AppHeader } from '@/containers';
 import { fakeUser } from '@/faker';
 import { Button, PageLayout } from '@/UI';
 
 const Layout = ({ children }: { children: ReactNode }) => (
-  <PageLayout menu={<AppSidenav user={fakeUser} />}>{children}</PageLayout>
+  <PageLayout menu={<AppSidenav user={fakeUser} />} header={<AppHeader />}>
+    {children}
+  </PageLayout>
 );
 
 // As the router is wrapped with the provider,

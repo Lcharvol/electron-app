@@ -8,6 +8,7 @@ const colors = {
   //   ultraLight: '#585c60',
   // },
   primary: {
+    verydark: 'rgb(15, 15, 15)',
     dark: 'rgb(19, 20, 21)',
     normal: 'rgb(28,29,31)',
     light: 'rgb(32,33,35)',
@@ -36,6 +37,7 @@ const colors = {
     light: 'rgb(200,200,200)',
     medium: 'rgb(185,185,185)',
     normal: 'rgb(170,170,170)',
+    dark: 'rgb(142,142,142)',
   },
   white: 'rgb(252,252,252)',
   black: 'rgb(25,25,25)',

@@ -3,13 +3,14 @@ import React, { cloneElement, ReactElement, ReactNode } from 'react';
 import { useWindowSize } from '@/hooks';
 
 import { SMALL_SIDENAV_WINDOW_WITH } from './constants';
-import { Content, Menu, PageContent } from './styles';
+import { Content, Menu, PageContent, Header } from './styles';
 
 interface PageLayoutProps {
   menu?: ReactElement;
   children?: ReactNode;
+  header?: ReactNode;
 }
-const PageLayout = ({ menu, children }: PageLayoutProps) => {
+const PageLayout = ({ menu, children, header }: PageLayoutProps) => {
   const [windowWidth] = useWindowSize();
   const isSmall = windowWidth < SMALL_SIDENAV_WINDOW_WITH;
 
@@ -18,7 +19,11 @@ const PageLayout = ({ menu, children }: PageLayoutProps) => {
       {menu && (
         <Menu $isSmall={isSmall}>{cloneElement(menu, { isSmall })}</Menu>
       )}
-      <PageContent>{children}</PageContent>
+
+      <PageContent>
+        {header && <Header>{header}</Header>}
+        {children}
+      </PageContent>
     </Content>
   );
 };

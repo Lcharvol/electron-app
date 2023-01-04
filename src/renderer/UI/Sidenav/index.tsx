@@ -2,19 +2,25 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Item from './Item';
-import { Container, Content, Routes } from './styles';
+import { Container, Content, Bottom, Routes, Body } from './styles';
 import { RouteType, ActionType } from './types';
 import { getIsItemSelected } from './utils';
-import Divider from '../Divider';
 
 interface SidenavProps {
   routes: RouteType[];
   topNode?: ReactNode;
+  body?: ReactNode;
   actions?: ActionType[];
   isSmall?: boolean;
 }
 
-const Sidenav = ({ routes = [], topNode, isSmall, actions }: SidenavProps) => {
+const Sidenav = ({
+  routes = [],
+  topNode,
+  isSmall,
+  actions,
+  body,
+}: SidenavProps) => {
   const location = useLocation();
   const [selectedItem, setSelectedItem] = useState('');
   useEffect(() => {
@@ -35,13 +41,17 @@ const Sidenav = ({ routes = [], topNode, isSmall, actions }: SidenavProps) => {
                 index,
                 selectedItem,
               })}
-              key={index}
+              key={route.path}
             />
           ))}
         </Routes>
-        {actions?.map((action) => (
-          <Item route={action} />
-        ))}
+        <Body>{body}</Body>
+
+        <Bottom>
+          {actions?.map((action) => (
+            <Item route={action} isSmall={isSmall} />
+          ))}
+        </Bottom>
       </Content>
     </Container>
   );
