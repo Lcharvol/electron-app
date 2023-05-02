@@ -23,6 +23,10 @@ const items = [
     component: () => renderSettings(getSettingsByKind(SETTINGS_KINDS.GENERAL)),
   },
   {
+    label: 'RA',
+    component: () => renderSettings(getSettingsByKind(SETTINGS_KINDS.RA)),
+  },
+  {
     label: 'Help',
     component: () => renderSettings(getSettingsByKind(SETTINGS_KINDS.HELP)),
   },

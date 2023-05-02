@@ -13,6 +13,9 @@ import PageStepper from './PageStepper';
 import PageHeader from './PageHeader';
 import IconButton from './IconButton';
 import Tabs from './Tabs';
+import Chip from './Chip';
+import Table from './Table';
+import Box from './Box';
 
 export {
   Button,
@@ -30,4 +33,7 @@ export {
   PageStepper,
   PageHeader,
   Tabs,
+  Chip,
+  Table,
+  Box,
 };

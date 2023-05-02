@@ -88,9 +88,58 @@ const theme = createTheme({
         },
       },
     },
-    MuiTabPanel: {
+    MuiTabPanel: {},
+    MuiChip: {
+      defaultProps: {
+        variant: 'outlined',
+      },
       styleOverrides: {
-        root: { background: 'red' },
+        root: {
+          color: colors.font.normal,
+          borderColor: colors.font.normal,
+          borderRadius: '0.4rem',
+        },
+      },
+      variants: [
+        {
+          props: { kind: 'success' },
+          style: {
+            color: colors.state.success,
+            borderColor: colors.state.success,
+          },
+        },
+        {
+          props: { kind: 'error' },
+          style: {
+            color: colors.state.error,
+            borderColor: colors.state.error,
+          },
+        },
+        {
+          props: { kind: 'warning' },
+          style: {
+            color: colors.state.warning,
+            borderColor: colors.state.warning,
+          },
+        },
+      ],
+    },
+    MuiTable: {
+      styleOverrides: {
+        root: { borderColor: 'red' },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          color: colors.font.normal,
+          borderColor: colors.primary.light,
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: { borderColor: 'red' },
       },
     },
   },

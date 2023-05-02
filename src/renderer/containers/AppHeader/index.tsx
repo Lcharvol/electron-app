@@ -2,6 +2,7 @@ import React from 'react';
 import { IconButton } from '@/UI';
 import styled from 'styled-components';
 import { mdiCogOutline } from '@mdi/js';
+import ServicesHealthCheck from '../ServicesHealthCheck';
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const Container = styled.div`
 const AppHeader = () => {
   return (
     <Container>
+      <ServicesHealthCheck />
       <IconButton iconPath={mdiCogOutline} />
     </Container>
   );

@@ -1,7 +1,7 @@
 import React, { ReactNode, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { constantRoutes } from '@/constants';
-import { Home, Projects, Login, Settings } from '@/pages';
+import { Home, Projects, Login, Settings, ReviewApp } from '@/pages';
 import useAuth from '@/contexts/auth';
 import { AppSidenav, AppHeader } from '@/containers';
 import { fakeUser } from '@/faker';
@@ -54,6 +54,16 @@ const Router = () => {
             <ProtectedRoute>
               <Layout>
                 <Settings />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={constantRoutes.REVIEW_APP}
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ReviewApp />
               </Layout>
             </ProtectedRoute>
           }

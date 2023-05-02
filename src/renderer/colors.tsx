@@ -39,6 +39,11 @@ const colors = {
     normal: 'rgb(170,170,170)',
     dark: 'rgb(142,142,142)',
   },
+  state: {
+    success: '#26de81',
+    error: '#fc5c65',
+    warning: '#fed330',
+  },
   white: 'rgb(252,252,252)',
   black: 'rgb(25,25,25)',
 };

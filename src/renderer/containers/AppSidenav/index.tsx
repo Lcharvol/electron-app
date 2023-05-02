@@ -1,5 +1,5 @@
 import {
-  mdiFolderOpenOutline,
+  mdiApps,
   mdiCogOutline,
   mdiShieldAccountOutline,
   mdiLogout,
@@ -24,9 +24,9 @@ const routes = [
     exact: true,
   },
   {
-    label: 'Projects',
-    icon: mdiFolderOpenOutline,
-    path: constantRoutes.PROJECTS,
+    label: 'ReviewApp',
+    icon: mdiApps,
+    path: constantRoutes.REVIEW_APP,
   },
   {
     label: 'Settings',
