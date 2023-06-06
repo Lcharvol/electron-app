@@ -41,6 +41,14 @@ const theme = createTheme({
             },
           },
         },
+        {
+          props: { variant: 'outlined-white' },
+          style: {
+            color: colors.white,
+            borderColor: 'white',
+            border: 'solid 0.1rem',
+          },
+        },
       ],
     },
     MuiDivider: {
@@ -53,11 +61,18 @@ const theme = createTheme({
       },
     },
     MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '0.5rem',
+          boxSizing: 'border-box',
+        },
+      },
       variants: [
         {
           props: { variant: 'filled' },
           style: {
-            backgroundColor: colors.secondary.medium,
+            background: `linear-gradient(to right bottom, ${colors.secondary.normal}, ${colors.secondary.dark} 120%);`,
+            padding: '1rem',
           },
         },
         {
@@ -144,7 +159,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
+    fontFamily: ['Geologica', 'sans-serif'].join(','),
     fontSize: 14,
     fontWeightLight: 300,
     fontWeightRegular: 400,

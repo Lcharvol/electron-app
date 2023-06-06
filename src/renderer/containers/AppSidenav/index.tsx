@@ -7,7 +7,7 @@ import {
 import React from 'react';
 
 import { constantRoutes } from '@/constants';
-import { Sidenav, Card } from '@/UI';
+import { Sidenav, Card, CardMedia } from '@/UI';
 import useAuth from '@/contexts/auth';
 import UserHeader from '../UserHeader';
 
@@ -50,7 +50,14 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       routes={routes}
       isSmall={isSmall}
       topNode={<UserHeader user={user} hasDivider isSmall={isSmall} />}
-      body={<Card variant="filled" />}
+      body={
+        <Card variant="filled">
+          <CardMedia
+            component="img"
+            src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
+          />
+        </Card>
+      }
       actions={actions}
     />
   );

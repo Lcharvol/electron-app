@@ -16,6 +16,10 @@ import Tabs from './Tabs';
 import Chip from './Chip';
 import Table from './Table';
 import Box from './Box';
+import Image from './Image';
+import CardMedia from './CardMedia';
+import * as Charts from './Charts';
+import Badge from './Badge';
 
 export {
   Button,
@@ -36,4 +40,8 @@ export {
   Chip,
   Table,
   Box,
+  Image,
+  CardMedia,
+  Charts,
+  Badge,
 };

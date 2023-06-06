@@ -1,8 +1,7 @@
 import React from 'react';
-import { IconButton } from '@/UI';
+import { IconButton, Badge } from '@/UI';
 import styled from 'styled-components';
-import { mdiCogOutline } from '@mdi/js';
-import ServicesHealthCheck from '../ServicesHealthCheck';
+import { mdiCogOutline, mdiBellOutline } from '@mdi/js';
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +14,9 @@ const Container = styled.div`
 const AppHeader = () => {
   return (
     <Container>
-      <ServicesHealthCheck />
+      <Badge badgeContent={3} color="primary">
+        <IconButton iconPath={mdiBellOutline} />
+      </Badge>
       <IconButton iconPath={mdiCogOutline} />
     </Container>
   );
