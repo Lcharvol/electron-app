@@ -157,6 +157,23 @@ const theme = createTheme({
         root: { borderColor: 'red' },
       },
     },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          paddingRight: 30,
+          paddingLeft: 30,
+          paddingTop: 10,
+          paddingBottom: 10,
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.primary.light,
+        },
+      },
+    },
   },
   typography: {
     fontFamily: ['Geologica', 'sans-serif'].join(','),

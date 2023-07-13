@@ -1,7 +1,8 @@
 import React from 'react';
 import { IconButton, Badge } from '@/UI';
 import styled from 'styled-components';
-import { mdiCogOutline, mdiBellOutline } from '@mdi/js';
+import { mdiBellOutline } from '@mdi/js';
+import UserDropDown from './UserDropDown';
 
 const Container = styled.div`
   display: flex;
@@ -11,13 +12,14 @@ const Container = styled.div`
   padding: 1rem;
   padding-right: 1rem;
 `;
+
 const AppHeader = () => {
   return (
     <Container>
       <Badge badgeContent={3} color="primary">
         <IconButton iconPath={mdiBellOutline} />
       </Badge>
-      <IconButton iconPath={mdiCogOutline} />
+      <UserDropDown />
     </Container>
   );
 };

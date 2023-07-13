@@ -1,5 +1,7 @@
+import { fakeUser } from '@/faker';
+
 export const getCurrentUser = async () => {
-  const response = 'test';
+  const response = fakeUser;
 
   return response;
 };

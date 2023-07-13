@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { serviceUser, serviceSession } from '@/services';
 
-type UserType = { email: string };
+type UserType = { email: string; profilePictureUrl?: string };
 interface AuthContextType {
   // We defined the user type in `index.d.ts`, but it's
   // a simple object with email, name and password.
@@ -52,7 +52,9 @@ export const AuthProvider = ({
     serviceUser
       .getCurrentUser()
       .then((user) => setUser(user))
-      .catch((error) => {})
+      .catch((error) => {
+        console.log('cannot get current user', error);
+      })
       .finally(() => setLoadingInitial(false));
   }, []);
 

@@ -5,7 +5,7 @@ import {
   mdiLogout,
 } from '@mdi/js';
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { constantRoutes } from '@/constants';
 import { Sidenav, Card, CardMedia } from '@/UI';
 import useAuth from '@/contexts/auth';
@@ -16,26 +16,8 @@ interface AppSidenavProps {
   isSmall?: boolean;
 }
 
-const routes = [
-  {
-    label: 'Overview',
-    icon: mdiShieldAccountOutline,
-    path: constantRoutes.HOME,
-    exact: true,
-  },
-  {
-    label: 'ReviewApp',
-    icon: mdiApps,
-    path: constantRoutes.REVIEW_APP,
-  },
-  {
-    label: 'Settings',
-    icon: mdiCogOutline,
-    path: constantRoutes.SETTINGS,
-  },
-];
-
 const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
+  const { t } = useTranslation();
   const { logout } = useAuth();
 
   const actions = [
@@ -45,6 +27,26 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       onClick: () => logout(),
     },
   ];
+
+  const routes = [
+    {
+      label: t('Overview'),
+      icon: mdiShieldAccountOutline,
+      path: constantRoutes.HOME,
+      exact: true,
+    },
+    {
+      label: t('Wallet'),
+      icon: mdiApps,
+      path: constantRoutes.REVIEW_APP,
+    },
+    {
+      label: t('Settings'),
+      icon: mdiCogOutline,
+      path: constantRoutes.SETTINGS,
+    },
+  ];
+
   return (
     <Sidenav
       routes={routes}

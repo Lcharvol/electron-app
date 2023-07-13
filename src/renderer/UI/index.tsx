@@ -20,6 +20,7 @@ import Image from './Image';
 import CardMedia from './CardMedia';
 import * as Charts from './Charts';
 import Badge from './Badge';
+import Menu from './Menu';
 
 export {
   Button,
@@ -44,4 +45,5 @@ export {
   CardMedia,
   Charts,
   Badge,
+  Menu,
 };
