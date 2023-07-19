@@ -61,7 +61,7 @@ const Home = ({ goToNextStep, login }: HomeProps) => {
         <Typography
           weight="light"
           variant="caption"
-          color={colors.font.secondary}
+          color={colors.darkFont.secondary}
         >
           En cliquant sur les boutons de connexion ci-dessus vous reconaissez
           avoir lu, compris et accepté les Conditions générales et la Politique

@@ -25,21 +25,19 @@ export const StyledNavLink = styled(NavLink)<StyledElemProps>`
   user-select: none;
   & > * {
     transition: all 0.1s ease-in-out;
-    color: ${({ $isSelected }) =>
-      $isSelected ? colors.white : colors.primary.veryLight};
+    color: ${({ $isSelected, theme }) =>
+      $isSelected ? theme.palette.font.normal : theme.palette.font.disabled};
   }
-  background-color: ${({ $isSelected }) =>
-    $isSelected && colors.primary.normal};
+  background-color: ${({ $isSelected, theme }) =>
+    $isSelected && theme.palette.primary.light};
   &:hover {
-    background-color: ${() => colors.primary.normal};
-  }
-  &:hover > * {
-    color: ${() => colors.white};
+    background-color: ${({ theme }) => theme.palette.primary.light};
   }
 `;
 
 export const Label = styled(Typography)<StyledElemProps>`
   max-width: ${({ $isSmall }) => ($isSmall ? '0rem' : '100%')};
+  max-height: ${({ $isSmall }) => $isSmall && '0rem'};
   overflow: hidden;
   transition: all 0.2s ease-in-out;
 `;

@@ -1,12 +1,8 @@
 import styled from 'styled-components';
-import colors from '@/colors';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   height: 100%;
-  border-right: solid 0.05rem ${() => colors.primary.light};
-  background-color: ${({ theme }) => theme.sidenavBackground};
   padding-top: 2rem;
 `;
 
@@ -27,7 +23,7 @@ export const Body = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content flex-end;
+  justify-content: flex-end;
 `;
 export const Bottom = styled.div`
   display: flex;

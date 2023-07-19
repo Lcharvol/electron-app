@@ -21,10 +21,10 @@ import Typography from '../Typography';
 type TooltipData = AppleStock;
 
 const stock = appleStock.slice(800);
-export const background = colors.primary.normal;
-export const background2 = colors.primary.dark;
-export const accentColor = colors.primary.veryLight;
-export const accentColorDark = colors.secondary.normal;
+export const background = colors.black.normal;
+export const background2 = colors.black.dark;
+export const accentColor = colors.black.veryLight;
+export const accentColorDark = colors.blue.normal;
 const tooltipStyles = {
   ...defaultStyles,
   background,

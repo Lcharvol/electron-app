@@ -18,8 +18,10 @@ const Menu = ({ items, open, onClose, onClick, anchorEl }: MenuProps) => {
       onClick={onClick}
       anchorEl={anchorEl}
     >
-      {items?.map((item) => (
-        <MenuItem onClick={item.onClick}>{item.render()}</MenuItem>
+      {items?.map((item, index) => (
+        <MenuItem key={index} onClick={item.onClick}>
+          {item.render()}
+        </MenuItem>
       ))}
     </MuiMenu>
   );

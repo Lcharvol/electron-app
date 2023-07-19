@@ -8,7 +8,7 @@ import Grid from './Grid';
 import PageLayout from './PageLayout';
 import Sidenav from './Sidenav';
 import Typography from './Typography';
-import { TextField } from './Inputs';
+import { TextField, Autocomplete } from './Inputs';
 import PageStepper from './PageStepper';
 import PageHeader from './PageHeader';
 import IconButton from './IconButton';
@@ -46,4 +46,5 @@ export {
   Charts,
   Badge,
   Menu,
+  Autocomplete,
 };

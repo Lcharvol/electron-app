@@ -18,15 +18,15 @@ const Home = () => {
     <Grid container spacing={4} sx={{ height: '30rem' }}>
       <Grid item xs={12}>
         <Card
-          sx={{ height: '100%', position: 'relative' }}
+          sx={{ position: 'relative' }}
           variant="filled"
           hasHeaderDivider
           actions={<Button variant="outlined-white">Upgrade</Button>}
         >
-          <Typography variant="h4" fontWeight="medium">
+          <Typography variant="h4" fontWeight="medium" color="white">
             Upgrade your plan
           </Typography>
-          <Typography variant="subtitle2">
+          <Typography variant="subtitle2" color="white">
             Switch to a commercial plan to access advanced features & technical
             support.
           </Typography>
@@ -37,7 +37,7 @@ const Home = () => {
           />
         </Card>
       </Grid>
-      <Grid item xs={12} container direction="column" spacing={4}>
+      {/* <Grid item xs={12} container direction="column" spacing={4}>
         <Grid item>
           <Card
             sx={{ height: '20rem' }}
@@ -45,10 +45,7 @@ const Home = () => {
               <CardHeader
                 title="My accounts"
                 icon={
-                  <Icon
-                    path={mdiChartLineVariant}
-                    color={colors.secondary.normal}
-                  />
+                  <Icon path={mdiChartLineVariant} color={colors.blue.normal} />
                 }
               />
             }
@@ -59,7 +56,7 @@ const Home = () => {
         <Grid item>
           <Card sx={{ height: '20rem' }} />
         </Grid>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

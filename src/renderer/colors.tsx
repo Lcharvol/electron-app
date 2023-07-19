@@ -1,5 +1,5 @@
 const colors = {
-  primary: {
+  black: {
     verydark: 'rgb(15, 15, 15)',
     dark: 'rgb(19, 20, 21)',
     normal: 'rgb(28,29,31)',
@@ -7,13 +7,17 @@ const colors = {
     veryLight: 'rgb(61,66,72)',
     ultraLight: '#585c60',
   },
-  font: {
-    main: '#007FFF',
+  darkFont: {
     normal: 'rgb(252,252,252)',
     secondary: 'rgb(61,66,72)',
     disabled: 'rgb(170,170,170)',
   },
-  secondary: {
+  lightFont: {
+    normal: 'rgba(0, 0, 0, 0.87)',
+    secondary: 'rgba(0, 0, 0, 0.6)',
+    disabled: 'rgba(0, 0, 0, 0.38)',
+  },
+  blue: {
     background: '#F0F7FF',
     ultralight: '#C2E0FF',
     verylight: '#99CCF3',
@@ -37,7 +41,6 @@ const colors = {
     warning: '#fed330',
   },
   white: 'rgb(252,252,252)',
-  black: 'rgb(25,25,25)',
 };
 
 export default colors;

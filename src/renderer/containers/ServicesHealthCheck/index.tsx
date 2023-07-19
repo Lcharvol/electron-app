@@ -2,7 +2,6 @@ import React from 'react';
 import { Chip, Grid } from '@/UI';
 import { Icon } from '@mdi/react';
 import { mdiCheck } from '@mdi/js';
-import colors from '@/colors';
 
 const services = [
   {
@@ -19,9 +18,7 @@ const ServicesHealthCheck = () => {
           <Chip
             label={service.label}
             kind={service.status}
-            icon={
-              <Icon path={mdiCheck} size={0.7} color={colors.state.success} />
-            }
+            icon={<Icon path={mdiCheck} size={0.7} />}
           />
         </Grid>
       ))}

@@ -1,22 +1,16 @@
-import styled from 'styled-components';
 import Bootstrap from './Bootstrap';
 import Router from './Router';
+import { ColorModeProvider } from '@/contexts/colorMode';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-const Container = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  background-color: ${({ theme }) => theme.backgroundColor};
-`;
 
 export default function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   return (
-    <Bootstrap>
-      <Container>
-        <Router />
-      </Container>
-    </Bootstrap>
+    <ColorModeProvider initialColorMode={prefersDarkMode ? "dark" : "light"}>
+      <Bootstrap>
+          <Router />
+      </Bootstrap>
+    </ColorModeProvider>
   );
 }

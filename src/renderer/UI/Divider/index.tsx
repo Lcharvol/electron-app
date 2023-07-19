@@ -1,12 +1,11 @@
-import MuiDivider from '@mui/material/Divider';
-import React, { ReactNode } from 'react';
+import MuiDivider, { DividerProps } from '@mui/material/Divider';
 
-export interface DividerrProps {
-  children?: ReactNode;
-}
-
-const Divider = ({ children, ...props }: DividerrProps) => {
-  return <MuiDivider {...props}>{children}</MuiDivider>;
+const Divider = ({ children, orientation }: DividerProps) => {
+  return (
+    <MuiDivider orientation={orientation} flexItem>
+      {children}
+    </MuiDivider>
+  );
 };
 
 export default Divider;

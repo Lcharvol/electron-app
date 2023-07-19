@@ -1,10 +1,5 @@
-import {
-  mdiApps,
-  mdiCogOutline,
-  mdiShieldAccountOutline,
-  mdiLogout,
-} from '@mdi/js';
-import React from 'react';
+import { mdiApps, mdiCogOutline, mdiShieldAccountOutline } from '@mdi/js';
+
 import { useTranslation } from 'react-i18next';
 import { constantRoutes } from '@/constants';
 import { Sidenav, Card, CardMedia } from '@/UI';
@@ -19,14 +14,6 @@ interface AppSidenavProps {
 const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
   const { t } = useTranslation();
   const { logout } = useAuth();
-
-  const actions = [
-    {
-      label: 'Exit',
-      icon: mdiLogout,
-      onClick: () => logout(),
-    },
-  ];
 
   const routes = [
     {
@@ -53,14 +40,15 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       isSmall={isSmall}
       topNode={<UserHeader user={user} hasDivider isSmall={isSmall} />}
       body={
-        <Card variant="filled">
-          <CardMedia
-            component="img"
-            src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
-          />
-        </Card>
+        !isSmall && (
+          <Card variant="filled">
+            <CardMedia
+              component="img"
+              src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
+            />
+          </Card>
+        )
       }
-      actions={actions}
     />
   );
 };

@@ -1,7 +1,3 @@
-import React from 'react';
-
-import colors from '@/colors';
-
 import { RouteType } from '../types';
 import { Label, StyledIcon, StyledNavLink } from './styles';
 
@@ -15,17 +11,17 @@ const Item = ({ route, isSmall, isSelected }: ItemProps) => {
   return (
     <StyledNavLink
       to={route.path}
-      exact={route?.exact}
       $isSmall={isSmall}
       $isSelected={isSelected}
       onClick={route?.onClick}
     >
       <StyledIcon path={route.icon} size={1} $isSmall={isSmall} />
       <Label
-        color={isSelected ? colors.white : colors.primary.ultraLight}
+        $isSelected={isSelected}
         weight="roman"
         $isSmall={isSmall}
         variant="subtitle2"
+        color={isSelected ? 'font.normal' : 'font.disabled'}
       >
         {route.label}
       </Label>

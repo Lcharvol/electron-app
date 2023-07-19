@@ -9,6 +9,7 @@ const renderSettings = (settings: SettingType[]) => (
   <>
     {settings.map(({ label, description, action }: SettingType, index) => (
       <Setting
+        key={index}
         label={label}
         description={description}
         action={action}
@@ -17,14 +18,11 @@ const renderSettings = (settings: SettingType[]) => (
     ))}
   </>
 );
+
 const items = [
   {
     label: 'General',
     component: () => renderSettings(getSettingsByKind(SETTINGS_KINDS.GENERAL)),
-  },
-  {
-    label: 'RA',
-    component: () => renderSettings(getSettingsByKind(SETTINGS_KINDS.RA)),
   },
   {
     label: 'Help',

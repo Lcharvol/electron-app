@@ -18,7 +18,7 @@ const IconButton = ({
   onClick,
 }: IconButtonProps) => {
   return (
-    <MuiIconButton onClick={onClick}>
+    <MuiIconButton onClick={onClick} color="primary">
       {children}
       {iconPath && <Icon size={0.8} path={iconPath} color={color} />}
     </MuiIconButton>
