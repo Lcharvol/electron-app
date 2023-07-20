@@ -13,7 +13,7 @@ interface IconButtonProps extends MuiIconButtonProps {
 }
 const IconButton = ({
   iconPath,
-  color = colors.grey.light,
+  color,
   children,
   onClick,
 }: IconButtonProps) => {

@@ -1,4 +1,4 @@
-import React, { cloneElement, ReactElement, ReactNode } from 'react';
+import { cloneElement, ReactElement, ReactNode } from 'react';
 
 import { useWindowSize } from '@/hooks';
 

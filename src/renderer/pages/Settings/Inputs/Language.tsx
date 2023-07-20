@@ -21,6 +21,7 @@ const Language = () => {
   const onChange = (event, newValue) => {
     i18next.changeLanguage(newValue.value);
   };
+
   return (
     <Autocomplete
       label="Choose a language"

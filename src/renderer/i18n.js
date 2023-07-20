@@ -9,6 +9,7 @@ const resources = {
     translation: {
       Overview: 'Overview',
       Wallet: 'Wallet',
+      Search: 'Search...',
     },
   },
   fr: {
@@ -16,6 +17,7 @@ const resources = {
       Overview: 'Tableau de bord',
       Wallet: 'Portefeuille',
       Settings: 'Paramètres',
+      Search: 'Rechercher...',
     },
   },
 };

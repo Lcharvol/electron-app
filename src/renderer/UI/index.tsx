@@ -21,6 +21,9 @@ import CardMedia from './CardMedia';
 import * as Charts from './Charts';
 import Badge from './Badge';
 import Menu from './Menu';
+import SearchBar from './SearchBar';
+import Dialog from './Dialog';
+import ShortCut from './ShortCut';
 
 export {
   Button,
@@ -47,4 +50,7 @@ export {
   Badge,
   Menu,
   Autocomplete,
+  SearchBar,
+  Dialog,
+  ShortCut,
 };

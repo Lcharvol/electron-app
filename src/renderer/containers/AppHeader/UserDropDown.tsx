@@ -41,7 +41,7 @@ const UserDropDown = () => {
     },
   ];
   return (
-    <>
+    <div>
       <IconButton
         onClick={handleClick}
         size="small"
@@ -59,7 +59,7 @@ const UserDropDown = () => {
         onClose={handleClose}
         onClick={handleClose}
       />
-    </>
+    </div>
   );
 };
 

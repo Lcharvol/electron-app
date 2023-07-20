@@ -13,8 +13,8 @@ const colors = {
     disabled: 'rgb(170,170,170)',
   },
   lightFont: {
-    normal: 'rgba(0, 0, 0, 0.87)',
-    secondary: 'rgba(0, 0, 0, 0.6)',
+    normal: '#000',
+    secondary: '#232323',
     disabled: 'rgba(0, 0, 0, 0.38)',
   },
   blue: {

@@ -43,6 +43,10 @@ if (isDebug) {
   require('electron-debug')();
 }
 
+const setPreferedLanguage = () => {
+  process.env.PREFERED_LANGUAGE = app.getLocale();
+};
+
 const installExtensions = async () => {
   const installer = require('electron-devtools-installer');
   const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
@@ -129,6 +133,7 @@ app.on('window-all-closed', () => {
 
 app
   .whenReady()
+  .then(setPreferedLanguage)
   .then(() => {
     createWindow();
     app.on('activate', () => {

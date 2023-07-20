@@ -28,9 +28,9 @@ const getTheme = (mode) => {
               dark: colors.grey.light,
             },
             secondary: {
-              light: colors.blue.normal,
+              light: colors.blue.light,
               main: colors.blue.normal,
-              dark: colors.blue.normal,
+              dark: colors.blue.dark,
             },
             font: {
               normal: colors.lightFont.normal,
@@ -53,9 +53,9 @@ const getTheme = (mode) => {
               dark: colors.black.normal,
             },
             secondary: {
-              light: colors.blue.normal,
+              light: colors.blue.light,
               main: colors.blue.normal,
-              dark: colors.blue.normal,
+              dark: colors.blue.dark,
             },
             font: {
               normal: colors.darkFont.normal,
@@ -252,6 +252,13 @@ const getTheme = (mode) => {
           },
           endAdornment: { color: colors.darkFont.normal },
           clearIndicator: { color: colors.darkFont.normal },
+        },
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            color: isDark ? colors.darkFont.normal : colors.lightFont.secondary,
+          },
         },
       },
     },
