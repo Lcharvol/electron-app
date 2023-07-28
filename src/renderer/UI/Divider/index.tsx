@@ -1,8 +1,8 @@
 import MuiDivider, { DividerProps } from '@mui/material/Divider';
 
-const Divider = ({ children, orientation }: DividerProps) => {
+const Divider = ({ children, orientation, sx }: DividerProps) => {
   return (
-    <MuiDivider orientation={orientation} flexItem>
+    <MuiDivider orientation={orientation} sx={sx} flexItem>
       {children}
     </MuiDivider>
   );

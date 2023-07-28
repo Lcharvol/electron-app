@@ -9,13 +9,13 @@ const colors = {
   },
   darkFont: {
     normal: 'rgb(252,252,252)',
-    secondary: 'rgb(61,66,72)',
-    disabled: 'rgb(170,170,170)',
+    secondary: 'rgb(170,170,170)',
+    disabled: 'rgb(61,66,72)',
   },
   lightFont: {
-    normal: '#000',
-    secondary: '#232323',
-    disabled: 'rgba(0, 0, 0, 0.38)',
+    normal: '#1C2025',
+    secondary: 'rgb(67, 77, 91)',
+    disabled: 'rgb(142,142,142)',
   },
   blue: {
     background: '#F0F7FF',

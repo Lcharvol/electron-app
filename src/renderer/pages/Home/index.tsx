@@ -1,22 +1,10 @@
-import React from 'react';
-
-import {
-  CardMedia,
-  Card,
-  Grid,
-  Typography,
-  Button,
-  Charts,
-  CardHeader,
-} from '@/UI';
-import { Icon } from '@mdi/react';
-import { mdiChartLineVariant } from '@mdi/js';
-import colors from '@/colors';
+import { CardMedia, Card, Typography, Button, Box } from '@/UI';
+import { WalletMap } from '@/containers';
 
 const Home = () => {
   return (
-    <Grid container spacing={4} sx={{ height: '30rem' }}>
-      <Grid item xs={12}>
+    <Box sx={{ height: '100vh', position: 'relative' }}>
+      <Box sx={{ mb: '2rem' }}>
         <Card
           sx={{ position: 'relative' }}
           variant="filled"
@@ -36,28 +24,9 @@ const Home = () => {
             image="https://www.pngarts.com/files/18/Illustration-PNG-HQ-Picture.png"
           />
         </Card>
-      </Grid>
-      {/* <Grid item xs={12} container direction="column" spacing={4}>
-        <Grid item>
-          <Card
-            sx={{ height: '20rem' }}
-            header={
-              <CardHeader
-                title="My accounts"
-                icon={
-                  <Icon path={mdiChartLineVariant} color={colors.blue.normal} />
-                }
-              />
-            }
-          >
-            <Charts.Areas width={1100} height={250} />
-          </Card>
-        </Grid>
-        <Grid item>
-          <Card sx={{ height: '20rem' }} />
-        </Grid>
-      </Grid> */}
-    </Grid>
+      </Box>
+      <WalletMap />
+    </Box>
   );
 };
 

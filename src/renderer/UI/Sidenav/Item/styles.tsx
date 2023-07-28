@@ -2,8 +2,6 @@ import { Icon } from '@mdi/react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-import colors from '@/colors';
-
 import Typography from '../../Typography';
 
 type StyledElemProps = {
@@ -26,12 +24,15 @@ export const StyledNavLink = styled(NavLink)<StyledElemProps>`
   & > * {
     transition: all 0.1s ease-in-out;
     color: ${({ $isSelected, theme }) =>
-      $isSelected ? theme.palette.font.normal : theme.palette.font.disabled};
+      $isSelected ? theme.palette.menuSelected : theme.palette.menuNotSelected};
   }
   background-color: ${({ $isSelected, theme }) =>
-    $isSelected && theme.palette.primary.light};
+    $isSelected && theme.palette.secondary.light};
   &:hover {
-    background-color: ${({ theme }) => theme.palette.primary.light};
+    background-color: ${({ theme }) => theme.palette.secondary.light};
+    & > * {
+      color: ${({ theme }) => theme.palette.menuSelected};
+    }
   }
 `;
 

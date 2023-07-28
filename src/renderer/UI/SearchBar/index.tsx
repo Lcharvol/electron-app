@@ -3,26 +3,45 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { mdiMagnify } from '@mdi/js';
 import { useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
 import TextField from '../Inputs/TextField';
 import ShortCut from '../ShortCut';
+import Button from '../Button';
 
-const StyledTextField = styled(TextField)`
-  max-width: 20rem;
-`;
 interface SearchBarProps {
   onClick?: () => void;
   hasShortCut?: boolean;
+  isButton?: boolean;
+  onChange?: (event) => void;
 }
 
-const SearchBar = ({ onClick, hasShortCut }: SearchBarProps) => {
+const SearchBar = ({
+  onClick,
+  hasShortCut,
+  isButton,
+  onChange,
+}: SearchBarProps) => {
   const theme = useTheme();
   const { t } = useTranslation();
+
+  if (isButton) {
+    return (
+      <Button
+        size="small"
+        onClick={onClick}
+        startIcon={<Icon path={mdiMagnify} size={1} />}
+        variant="searchBar"
+        endIcon={<ShortCut keys={['meta', 'k']} action={onClick} />}
+      >
+        {t('Search')}
+      </Button>
+    );
+  }
   return (
-    <StyledTextField
+    <TextField
       size="small"
       onClick={onClick}
       placeholder={t('Search')}
+      onChange={onChange}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">

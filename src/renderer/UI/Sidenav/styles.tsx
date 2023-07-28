@@ -24,6 +24,7 @@ export const Body = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: flex-end;
+  padding-bottom: 2rem;
 `;
 export const Bottom = styled.div`
   display: flex;

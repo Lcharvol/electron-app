@@ -1,7 +1,7 @@
-import React, { ReactNode, Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { constantRoutes } from '@/constants';
-import { Home, Projects, Login, Settings, ReviewApp } from '@/pages';
+import { Home, Projects, Login, Settings, ReviewApp, Accounts } from '@/pages';
 import useAuth from '@/contexts/auth';
 import { AppSidenav, AppHeader } from '@/containers';
 import { fakeUser } from '@/faker';
@@ -64,6 +64,16 @@ const Router = () => {
             <ProtectedRoute>
               <Layout>
                 <ReviewApp />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={constantRoutes.ACCOUNTS}
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Accounts />
               </Layout>
             </ProtectedRoute>
           }

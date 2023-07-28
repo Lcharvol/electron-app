@@ -10,12 +10,18 @@ const Dialog = ({
   open,
   onClose,
   children,
+  maxWidth,
   header,
-  content,
   footer,
+  fullWidth,
 }: DialogProps) => {
   return (
-    <BlurryDialog open={open} onClose={onClose}>
+    <BlurryDialog
+      open={open}
+      onClose={onClose}
+      maxWidth={maxWidth}
+      fullWidth={fullWidth}
+    >
       {header && <DialogTitle>{header}</DialogTitle>}
       {children}
     </BlurryDialog>

@@ -1,4 +1,5 @@
 import { ColumnType, DataItem } from './types';
+import Typography from '../Typography';
 
 export const getHeaders = (columns: ColumnType[]) =>
   columns.map(({ header }) => header);
@@ -12,9 +13,11 @@ export const getRows = ({
 }) =>
   data.map((dataItem, index) => ({
     cells: columns.map((column) =>
-      typeof column.field === 'function'
-        ? column.field?.(dataItem)
-        : dataItem[column.field]
+      typeof column.field === 'function' ? (
+        column.field?.(dataItem)
+      ) : (
+        <Typography variant="caption">{dataItem[column.field]}</Typography>
+      )
     ),
     id: index,
   }));

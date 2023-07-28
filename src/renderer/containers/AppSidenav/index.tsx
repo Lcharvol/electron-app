@@ -1,9 +1,13 @@
-import { mdiApps, mdiCogOutline, mdiShieldAccountOutline } from '@mdi/js';
+import {
+  mdiWalletOutline,
+  mdiCogOutline,
+  mdiShieldAccountOutline,
+  mdiChartDonut,
+} from '@mdi/js';
 
 import { useTranslation } from 'react-i18next';
 import { constantRoutes } from '@/constants';
 import { Sidenav, Card, CardMedia } from '@/UI';
-import useAuth from '@/contexts/auth';
 import UserHeader from '../UserHeader';
 
 interface AppSidenavProps {
@@ -13,7 +17,6 @@ interface AppSidenavProps {
 
 const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
   const { t } = useTranslation();
-  const { logout } = useAuth();
 
   const routes = [
     {
@@ -24,8 +27,13 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
     },
     {
       label: t('Wallet'),
-      icon: mdiApps,
+      icon: mdiWalletOutline,
       path: constantRoutes.REVIEW_APP,
+    },
+    {
+      label: t('Accounts'),
+      icon: mdiChartDonut,
+      path: constantRoutes.ACCOUNTS,
     },
     {
       label: t('Settings'),
@@ -39,16 +47,16 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       routes={routes}
       isSmall={isSmall}
       topNode={<UserHeader user={user} hasDivider isSmall={isSmall} />}
-      body={
-        !isSmall && (
-          <Card variant="filled">
-            <CardMedia
-              component="img"
-              src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
-            />
-          </Card>
-        )
-      }
+      // body={
+      //   !isSmall && (
+      //     <Card variant="filled">
+      //       <CardMedia
+      //         component="img"
+      //         src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
+      //       />
+      //     </Card>
+      //   )
+      // }
     />
   );
 };

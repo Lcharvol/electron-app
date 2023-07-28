@@ -19,7 +19,7 @@ const options = [
 ];
 const Language = () => {
   const onChange = (event, newValue) => {
-    i18next.changeLanguage(newValue.value);
+    i18next.changeLanguage(newValue?.value);
   };
 
   return (

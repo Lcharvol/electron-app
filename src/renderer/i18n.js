@@ -10,6 +10,7 @@ const resources = {
       Overview: 'Overview',
       Wallet: 'Wallet',
       Search: 'Search...',
+      Accounts: 'Accounts',
     },
   },
   fr: {
@@ -18,6 +19,7 @@ const resources = {
       Wallet: 'Portefeuille',
       Settings: 'Paramètres',
       Search: 'Rechercher...',
+      Accounts: 'Comptes',
     },
   },
 };

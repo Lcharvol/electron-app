@@ -1,5 +1,4 @@
-import React from 'react';
-import { Grid, Button, Typography, FeedbackButton } from '@/UI';
+import { Grid, Typography, FeedbackButton } from '@/UI';
 import styled from 'styled-components';
 import colors from '@/colors';
 import { mdiApple, mdiGoogle } from '@mdi/js';

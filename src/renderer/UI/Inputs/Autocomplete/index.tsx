@@ -32,13 +32,14 @@ const Autocomplete = ({
       options={options}
       renderOption={renderOption}
       onChange={onChange}
+      fullWidth
       renderInput={(params) => (
         <TextField
           {...params}
           label={label}
-          // inputProps={{
-          //   ...params.inputProps,
-          // }}
+          inputProps={{
+            ...params.inputProps,
+          }}
         />
       )}
     />

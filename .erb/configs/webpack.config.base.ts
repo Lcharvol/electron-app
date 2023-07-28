@@ -65,6 +65,11 @@ const configuration: webpack.Configuration = {
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
+      // 'process.env.MapboxAccessToken': JSON.stringify(
+      //   process.env.NODE_ENV == 'production'
+      //     ? process.env.MapboxAccessTokenProd
+      //     : process.env.MapboxAccessTokenDev
+      // ),
     }),
   ],
 };

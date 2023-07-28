@@ -1,4 +1,3 @@
-import { createTheme } from '@mui/material/styles';
 import shadows from '@mui/material/styles/shadows';
 
 import colors from '@/colors';
@@ -7,11 +6,18 @@ const getTheme = (mode) => {
   const isDark = mode === 'dark';
   return {
     shadows: shadows.map(() => 'none'),
+    shape: {
+      borderRadius: '0.3rem',
+    },
     palette: {
       type: mode || 'dark',
       white: colors.white,
       grey: colors.grey,
       black: colors.black,
+      menuSelected: isDark ? colors.darkFont.normal : colors.blue.normal,
+      menuNotSelected: isDark
+        ? colors.darkFont.secondary
+        : colors.lightFont.secondary,
       ...(!isDark
         ? {
             // palette values for light mode
@@ -19,18 +25,15 @@ const getTheme = (mode) => {
             background: {
               paper: colors.white,
             },
-            shape: {
-              borderRadius: '0.6rem',
-            },
             primary: {
-              light: colors.grey.ultralight,
-              main: colors.grey.veryLight,
-              dark: colors.grey.light,
-            },
-            secondary: {
               light: colors.blue.light,
               main: colors.blue.normal,
               dark: colors.blue.dark,
+            },
+            secondary: {
+              light: colors.blue.background,
+              main: colors.grey.ultralight,
+              dark: colors.grey.veryLight,
             },
             font: {
               normal: colors.lightFont.normal,
@@ -44,18 +47,15 @@ const getTheme = (mode) => {
             background: {
               paper: colors.black.dark,
             },
-            shape: {
-              borderRadius: '0.6rem',
-            },
             primary: {
-              light: colors.black.normal,
-              main: colors.black.normal,
-              dark: colors.black.normal,
-            },
-            secondary: {
               light: colors.blue.light,
               main: colors.blue.normal,
               dark: colors.blue.dark,
+            },
+            secondary: {
+              light: colors.black.light,
+              main: colors.black.normal,
+              dark: colors.black.dark,
             },
             font: {
               normal: colors.darkFont.normal,
@@ -96,6 +96,28 @@ const getTheme = (mode) => {
               border: 'solid 0.1rem',
             },
           },
+          {
+            props: { variant: 'searchBar' },
+            style: {
+              color: isDark
+                ? colors.darkFont.secondary
+                : colors.lightFont.secondary,
+              borderColor: isDark
+                ? colors.darkFont.secondary
+                : colors.lightFont.disabled,
+              border: 'solid 0.01rem',
+              borderRadius: '0.4rem',
+              backgroundColor: isDark
+                ? colors.black.normal
+                : colors.blue.background,
+              '&:hover': {
+                opacity: 0.7,
+                backgroundColor: isDark
+                  ? colors.black.normal
+                  : colors.blue.background,
+              },
+            },
+          },
         ],
       },
       MuiDivider: {
@@ -132,18 +154,26 @@ const getTheme = (mode) => {
           },
         ],
       },
+      MuiTabs: {
+        styleOverrides: {
+          indicator: {
+            backgroundColor: colors.blue.normal,
+          },
+        },
+      },
       MuiTab: {
         styleOverrides: {
           root: {
             textTransform: 'none',
-            color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
+            color: isDark
+              ? colors.darkFont.secondary
+              : colors.lightFont.secondary,
             '&.Mui-selected': {
-              color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
+              color: isDark ? colors.blue.normal : colors.blue.normal,
             },
           },
         },
       },
-      MuiTabPanel: {},
       MuiChip: {
         defaultProps: {
           variant: 'outlined',
@@ -187,8 +217,8 @@ const getTheme = (mode) => {
       MuiTableCell: {
         styleOverrides: {
           root: {
-            color: colors.darkFont.normal,
-            borderColor: colors.black.light,
+            color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
+            borderColor: isDark ? colors.black.light : colors.grey.veryLight,
           },
         },
       },
@@ -209,16 +239,13 @@ const getTheme = (mode) => {
       },
       MuiList: {
         styleOverrides: {
-          root: {
-            backgroundColor: colors.black.light,
-          },
+          root: {},
         },
       },
       MuiInputBase: {
         styleOverrides: {
           root: {
             backgroundColor: isDark ? colors.black.normal : colors.white,
-            minWidth: 300,
           },
           input: {
             color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
@@ -231,6 +258,34 @@ const getTheme = (mode) => {
           },
         },
       },
+      MuiInput: {
+        styleOverrides: { border: ' 1px solid #53af5b !important' },
+      },
+      MuiTextField: {
+        defaultProps: {
+          variant: 'outlined',
+          fullWidth: true,
+        },
+        variants: [
+          {
+            props: { kind: 'simple' },
+            style: {
+              borderColor: 'blue',
+              '& .MuiInputBase-root': {
+                '& fieldset': {
+                  border: 'none',
+                },
+                backgroundColor: 'transparent',
+                borderColor: 'blue',
+              },
+              '& .MuiInputBase': {
+                backgroundColor: 'transparent',
+                borderColor: 'blue',
+              },
+            },
+          },
+        ],
+      },
       MuiAutocomplete: {
         styleOverrides: {
           root: {
@@ -238,6 +293,7 @@ const getTheme = (mode) => {
               color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
             },
           },
+          inputRoot: { borderColor: 'red' },
           option: {
             color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
             backgroundColor: isDark ? colors.black.dark : colors.white,
@@ -247,8 +303,11 @@ const getTheme = (mode) => {
                 : colors.grey.ultralight,
             },
           },
+          noOptions: {
+            color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
+          },
           paper: {
-            boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
+            boxShadow: 'rgba(0, 0, 0, 0.2) 0px 7px 29px 0px',
           },
           endAdornment: { color: colors.darkFont.normal },
           clearIndicator: { color: colors.darkFont.normal },
@@ -258,6 +317,16 @@ const getTheme = (mode) => {
         styleOverrides: {
           root: {
             color: isDark ? colors.darkFont.normal : colors.lightFont.secondary,
+          },
+        },
+      },
+      MuiDialog: {
+        styleOverrides: {
+          paper: {
+            borderRadius: '0.7rem',
+            border: `solid 0.01rem ${
+              isDark ? colors.darkFont.disabled : colors.lightFont.disabled
+            }`,
           },
         },
       },
@@ -272,8 +341,11 @@ const getTheme = (mode) => {
         color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
       },
       subtitle1: {
-        color: colors.grey.dark,
+        color: isDark ? colors.darkFont.secondary : colors.lightFont.secondary,
         fontSize: 13,
+      },
+      caption: {
+        color: isDark ? colors.darkFont.secondary : colors.lightFont.secondary,
       },
     },
   };

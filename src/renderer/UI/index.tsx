@@ -24,6 +24,9 @@ import Menu from './Menu';
 import SearchBar from './SearchBar';
 import Dialog from './Dialog';
 import ShortCut from './ShortCut';
+import Map from './Map';
+import Stack from './Stack';
+import List from './List';
 
 export {
   Button,
@@ -53,4 +56,7 @@ export {
   SearchBar,
   Dialog,
   ShortCut,
+  Map,
+  Stack,
+  List,
 };

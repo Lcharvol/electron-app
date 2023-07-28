@@ -48,12 +48,13 @@ const Sidenav = ({
             ))}
           </Routes>
           <Body>{body}</Body>
-
-          <Bottom>
-            {actions?.map((action) => (
-              <Item route={action} isSmall={isSmall} />
-            ))}
-          </Bottom>
+          {actions && (
+            <Bottom>
+              {actions.map((action) => (
+                <Item route={action} isSmall={isSmall} />
+              ))}
+            </Bottom>
+          )}
         </Content>
       </Container>
       <Divider orientation="vertical" />
