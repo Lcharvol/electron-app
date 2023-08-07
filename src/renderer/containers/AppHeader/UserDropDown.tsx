@@ -1,7 +1,14 @@
 import React from 'react';
 import useAuth from '@/contexts/auth';
-import { IconButton, Avatar, Menu, Typography, Divider } from '@/UI';
-import { Icon } from '@mdi/react';
+import {
+  IconButton,
+  Avatar,
+  Menu,
+  Typography,
+  Divider,
+  Box,
+  Stack,
+} from '@/UI';
 import { useTranslation } from 'react-i18next';
 import { mdiLogout, mdiCog } from '@mdi/js';
 import { useNavigate } from 'react-router-dom';
@@ -23,20 +30,25 @@ const UserDropDown = () => {
   const items = [
     {
       render: () => (
-        <>
-          <Icon path={mdiCog} size={1} />
-          <Typography>{t('Settings')}</Typography>
-        </>
+        <Stack direction="row" spacing={2}>
+          <Avatar />
+          <Stack>
+            <Typography>Lucas Charvolin</Typography>
+            <Typography variant="caption">charvolin0@gmail.com</Typography>
+          </Stack>
+        </Stack>
       ),
-      onClick: () => navigate(constantRoutes.SETTINGS),
     },
     {
       render: () => (
-        <>
-          <Icon path={mdiLogout} size={1} />
-          <Typography>{t('Logout')}</Typography>
-        </>
+        <Typography variant="subtitle2">{t('Settings')}</Typography>
       ),
+      iconPath: mdiCog,
+      onClick: () => navigate(constantRoutes.SETTINGS),
+    },
+    {
+      render: () => <Typography variant="subtitle2">{t('Logout')}</Typography>,
+      iconPath: mdiLogout,
       onClick: () => logout(),
     },
   ];
@@ -45,7 +57,6 @@ const UserDropDown = () => {
       <IconButton
         onClick={handleClick}
         size="small"
-        sx={{ ml: 2 }}
         aria-controls={open ? 'account-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}

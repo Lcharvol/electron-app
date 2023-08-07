@@ -1,6 +1,7 @@
-import { IconButton, Badge } from '@/UI';
+import { IconButton, Badge, Tooltip } from '@/UI';
 import styled from 'styled-components';
 import { mdiBellOutline } from '@mdi/js';
+import { useTranslation } from 'react-i18next';
 import UserDropDown from './UserDropDown';
 import GlobalSearch from '../GlobalSearch';
 
@@ -11,17 +12,22 @@ const Container = styled.div`
   align-items: center;
   padding-right: 1rem;
   & > * {
-    margin-left: 0.5;
+    margin-left: 0.5rem;
   }
 `;
 
 const AppHeader = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <GlobalSearch />
-      <Badge badgeContent={3} color="primary">
-        <IconButton iconPath={mdiBellOutline} />
-      </Badge>
+      <Tooltip title={t('Notifications')}>
+        <div>
+          <Badge badgeContent={3} overlap="circular">
+            <IconButton iconPath={mdiBellOutline} />
+          </Badge>
+        </div>
+      </Tooltip>
       <UserDropDown />
     </Container>
   );

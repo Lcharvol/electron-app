@@ -16,7 +16,7 @@ import { Icon } from '@mdi/react';
 import { mdiMagnify, mdiHistory } from '@mdi/js';
 import { useTheme } from '@mui/material';
 import SearchItem from './SearchItem';
-import { matchingItems } from './constants';
+import matchingItems from './matchingItems';
 
 const GlobalSearch = () => {
   const theme = useTheme();
@@ -41,7 +41,7 @@ const GlobalSearch = () => {
     );
     setResults(newResults);
   };
-  console.log('results: ', results);
+
   return (
     <>
       <SearchBar onClick={() => setIsDialogOpen(true)} hasShortCut isButton />
@@ -63,7 +63,7 @@ const GlobalSearch = () => {
                   <Icon
                     path={mdiMagnify}
                     size={1}
-                    color={theme.palette.secondary.light}
+                    color={theme.palette.font.secondary}
                   />
                 </InputAdornment>
               ),
@@ -87,6 +87,7 @@ const GlobalSearch = () => {
                       <SearchItem
                         item={item}
                         sectionItemsIconPath={sectionItemsIconPath}
+                        closeDialog={() => setIsDialogOpen(false)}
                       />
                     )}
                   />

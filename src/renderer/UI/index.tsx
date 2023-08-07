@@ -27,6 +27,8 @@ import ShortCut from './ShortCut';
 import Map from './Map';
 import Stack from './Stack';
 import List from './List';
+import Paper from './Paper';
+import Tooltip from './Tooltip';
 
 export {
   Button,
@@ -59,4 +61,6 @@ export {
   Map,
   Stack,
   List,
+  Paper,
+  Tooltip,
 };

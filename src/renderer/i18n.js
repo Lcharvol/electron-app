@@ -11,6 +11,8 @@ const resources = {
       Wallet: 'Wallet',
       Search: 'Search...',
       Accounts: 'Accounts',
+      Settings: 'Settings',
+      Logout: 'Logout',
     },
   },
   fr: {
@@ -20,6 +22,7 @@ const resources = {
       Settings: 'Paramètres',
       Search: 'Rechercher...',
       Accounts: 'Comptes',
+      Logout: 'Se déconnecter',
     },
   },
 };

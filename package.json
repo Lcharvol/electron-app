@@ -46,7 +46,9 @@
     "start:main": "cross-env NODE_ENV=development electronmon -r ts-node/register/transpile-only .",
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -62,7 +64,10 @@
       "prettier --ignore-path .eslintignore --single-quote --write"
     ]
   },
-  "browserslist": [],
+  "browserslist": [
+    "last 2 chrome version",
+    "last 2 firefox version"
+  ],
   "prettier": {
     "singleQuote": true,
     "overrides": [
@@ -114,7 +119,6 @@
     "@mdi/js": "^6.7.96",
     "@mdi/react": "^1.6.0",
     "@mui/material": "^5.14.0",
-    "@types/ramda": "^0.28.18",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.8",
     "electron-updater": "^5.2.3",
@@ -127,11 +131,21 @@
     "react-i18next": "^13.0.2",
     "react-map-gl": "^7.1.3",
     "react-router-dom": "^6.4.3",
-    "styled-components": "^5.3.6",
-    "tsconfig-paths-webpack-plugin": "^4.0.0"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/addon-links": "^7.2.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.1",
+    "@storybook/react": "^7.2.1",
+    "@storybook/react-webpack5": "^7.2.1",
+    "@storybook/testing-library": "^0.2.0",
     "@svgr/webpack": "^6.3.1",
     "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -163,7 +177,7 @@
     "css-minimizer-webpack-plugin": "^4.0.0",
     "d3-array": "^3.2.4",
     "detect-port": "^1.3.0",
-    "electron": "^20.0.2",
+    "electron": "25.0.0",
     "electron-builder": "^23.3.3",
     "electron-devtools-installer": "^3.2.0",
     "electron-notarize": "^1.2.1",
@@ -181,6 +195,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.13",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
@@ -195,6 +210,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",
+    "storybook": "^7.2.1",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.5",
     "ts-jest": "^28.0.8",
@@ -231,7 +247,8 @@
       "hardenedRuntime": true,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false
+      "gatekeeperAssess": false,
+      "icon": "assets/icons/96x96.png"
     },
     "dmg": {
       "contents": [
@@ -250,13 +267,15 @@
     "win": {
       "target": [
         "nsis"
-      ]
+      ],
+      "icon": "assets/icons/96x96.png"
     },
     "linux": {
       "target": [
         "AppImage"
       ],
-      "category": "Development"
+      "category": "Development",
+      "icon": "assets/icons/96x96.png"
     },
     "directories": {
       "app": "release/app",

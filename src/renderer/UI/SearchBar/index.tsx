@@ -48,7 +48,7 @@ const SearchBar = ({
             <Icon
               path={mdiMagnify}
               size={0.8}
-              color={theme.palette.secondary.light}
+              color={theme.palette.font.normal}
             />
           </InputAdornment>
         ),

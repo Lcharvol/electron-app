@@ -5,7 +5,6 @@ import colors from '@/colors';
 const getTheme = (mode) => {
   const isDark = mode === 'dark';
   return {
-    shadows: shadows.map(() => 'none'),
     shape: {
       borderRadius: '0.3rem',
     },
@@ -130,6 +129,9 @@ const getTheme = (mode) => {
         },
       },
       MuiCard: {
+        defaultProps: {
+          elevation: 0,
+        },
         styleOverrides: {
           root: {
             borderRadius: '0.5rem',
@@ -258,8 +260,26 @@ const getTheme = (mode) => {
           },
         },
       },
-      MuiInput: {
-        styleOverrides: { border: ' 1px solid #53af5b !important' },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color: isDark
+              ? colors.darkFont.secondary
+              : colors.lightFont.secondary,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            '&:hover .MuiOutlinedInput-notchedOutline': {
+              borderColor: isDark
+                ? colors.darkFont.normal
+                : colors.lightFont.disabled,
+              borderWidth: '0.12rem',
+            },
+          },
+        },
       },
       MuiTextField: {
         defaultProps: {
@@ -306,9 +326,6 @@ const getTheme = (mode) => {
           noOptions: {
             color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
           },
-          paper: {
-            boxShadow: 'rgba(0, 0, 0, 0.2) 0px 7px 29px 0px',
-          },
           endAdornment: { color: colors.darkFont.normal },
           clearIndicator: { color: colors.darkFont.normal },
         },
@@ -327,6 +344,14 @@ const getTheme = (mode) => {
             border: `solid 0.01rem ${
               isDark ? colors.darkFont.disabled : colors.lightFont.disabled
             }`,
+          },
+        },
+      },
+      MuiBadge: {
+        styleOverrides: {
+          badge: {
+            color: isDark ? colors.darkFont.normal : colors.white,
+            backgroundColor: colors.blue.light,
           },
         },
       },
