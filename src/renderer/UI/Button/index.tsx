@@ -13,8 +13,9 @@ declare module '@mui/material/Button' {
 export interface ButtonProps extends MuiButtonProps {
   children: ReactNode;
   startIcon?: ReactNode;
+  variant?: 'primary' | 'secondary' | 'white' | 'outlined' | 'searchBar';
 }
-const Button = ({
+function Button({
   children,
   onClick,
   variant,
@@ -22,7 +23,7 @@ const Button = ({
   startIcon,
   endIcon,
   size,
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <MuiButton
       onClick={onClick}
@@ -36,6 +37,6 @@ const Button = ({
       {children}
     </MuiButton>
   );
-};
+}
 
 export default Button;

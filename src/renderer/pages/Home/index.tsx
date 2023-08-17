@@ -1,7 +1,7 @@
 import { CardMedia, Card, Typography, Button, Box } from '@/UI';
 import { WalletMap } from '@/containers';
 
-const Home = () => {
+function Home() {
   return (
     <Box sx={{ height: '100vh', position: 'relative' }}>
       <Box sx={{ mb: '2rem' }}>
@@ -9,7 +9,7 @@ const Home = () => {
           sx={{ position: 'relative' }}
           variant="filled"
           hasHeaderDivider
-          actions={<Button variant="outlined-white">Upgrade</Button>}
+          actions={<Button variant="outlined">Upgrade</Button>}
         >
           <Typography variant="h4" fontWeight="medium" color="white">
             Upgrade your plan
@@ -28,6 +28,6 @@ const Home = () => {
       <WalletMap />
     </Box>
   );
-};
+}
 
 export default Home;

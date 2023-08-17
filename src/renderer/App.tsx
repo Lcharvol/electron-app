@@ -1,5 +1,5 @@
-import { ColorModeProvider } from '@/contexts/colorMode';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { ColorModeProvider } from '@/contexts/colorMode';
 import Bootstrap from './Bootstrap';
 import Router from './Router';
 

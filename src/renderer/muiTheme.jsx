@@ -1,5 +1,3 @@
-import shadows from '@mui/material/styles/shadows';
-
 import colors from '@/colors';
 
 const getTheme = (mode) => {
@@ -10,6 +8,7 @@ const getTheme = (mode) => {
     },
     palette: {
       type: mode || 'dark',
+      background: isDark ? colors.black.verydark : colors.white,
       white: colors.white,
       grey: colors.grey,
       black: colors.black,
@@ -67,6 +66,7 @@ const getTheme = (mode) => {
       MuiButton: {
         defaultProps: {
           disableRipple: true,
+          variant: 'primary',
         },
         variants: [
           {
@@ -88,10 +88,10 @@ const getTheme = (mode) => {
             },
           },
           {
-            props: { variant: 'outlined-white' },
+            props: { variant: 'outlined' },
             style: {
-              color: colors.white,
-              borderColor: 'white',
+              color: isDark ? colors.white : colors.blue.normall,
+              borderColor: isDark ? colors.white : colors.blue.normall,
               border: 'solid 0.1rem',
             },
           },

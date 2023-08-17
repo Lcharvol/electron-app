@@ -47,7 +47,7 @@
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 -c ./src/renderer/UI/storybook",
     "build-storybook": "storybook build"
   },
   "lint-staged": {

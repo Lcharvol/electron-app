@@ -15,7 +15,7 @@ interface TableProps {
   columns: ColumnType[];
 }
 
-const Table = ({ data, columns }: TableProps) => {
+function Table({ data, columns }: TableProps) {
   const headers = getHeaders(columns);
   const rows = getRows({ data, columns });
 
@@ -48,6 +48,6 @@ const Table = ({ data, columns }: TableProps) => {
       </MuiTable>
     </TableContainer>
   );
-};
+}
 
 export default Table;

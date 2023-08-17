@@ -9,12 +9,12 @@ interface AvatarProps {
   variant?: 'square' | 'circular' | 'rounded' | undefined;
   sx?: SxProps;
 }
-const Avatar = ({ alt, src, children, variant, sx }: AvatarProps) => {
+function Avatar({ alt, src, children, variant, sx }: AvatarProps) {
   return (
     <MuiAvatar alt={alt} src={src} variant={variant} sx={sx}>
       {children}
     </MuiAvatar>
   );
-};
+}
 
 export default Avatar;

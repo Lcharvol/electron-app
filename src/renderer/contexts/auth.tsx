@@ -22,11 +22,12 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
-export const AuthProvider = ({
+
+export function AuthProvider({
   children,
 }: {
   children: ReactNode;
-}): JSX.Element => {
+}): JSX.Element {
   const [user, setUser] = useState<UserType>();
   const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -114,7 +115,7 @@ export const AuthProvider = ({
       {!loadingInitial && children}
     </AuthContext.Provider>
   );
-};
+}
 const useAuth = () => {
   return useContext(AuthContext);
 };

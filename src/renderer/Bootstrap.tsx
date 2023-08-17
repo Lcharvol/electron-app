@@ -24,7 +24,7 @@ export interface BootstrapProps {
   children: ReactNode;
 }
 
-const Bootstrap = ({ children }: BootstrapProps) => {
+function Bootstrap({ children }: BootstrapProps) {
   const { colorMode } = useColorMode();
   const theme = useMemo(() => createTheme(getTheme(colorMode)), [colorMode]);
 
@@ -39,6 +39,6 @@ const Bootstrap = ({ children }: BootstrapProps) => {
       </BrowserRouter>
     </Container>
   );
-};
+}
 
 export default Bootstrap;
