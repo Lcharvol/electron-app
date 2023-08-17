@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Avatar, Divider, Grid, Typography } from '@/UI';
 
 interface UserHeaderProps {
@@ -8,11 +6,11 @@ interface UserHeaderProps {
   isSmall?: boolean;
 }
 
-const UserHeader = ({
+function UserHeader({
   user,
   hasDivider = false,
   isSmall = false,
-}: UserHeaderProps) => {
+}: UserHeaderProps) {
   return (
     <Grid container spacing={2} alignItems="center" justifyContent="center">
       <Grid
@@ -48,6 +46,6 @@ const UserHeader = ({
       )}
     </Grid>
   );
-};
+}
 
 export default UserHeader;

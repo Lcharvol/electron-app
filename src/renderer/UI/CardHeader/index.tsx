@@ -33,16 +33,18 @@ export interface CardHeaderProps {
   action?: Node;
 }
 
-const CardHeader = ({ title, subheader, icon, action }: CardHeaderProps) => (
-  <StyledContainer
-    avatar={icon && <StyledIcon>{icon}</StyledIcon>}
-    action={<StyledAction>{action}</StyledAction>}
-    title={<StyledTitle>{title}</StyledTitle>}
-    subheader={subheader}
-    // disableTypography={false}
-    // titleTypographyProps={{ variant: "h1", color: "red" }}
-    // subheaderTypographyProps={{ variant: "subtitle1" }}
-  />
-);
+function CardHeader({ title, subheader, icon, action }: CardHeaderProps) {
+  return (
+    <StyledContainer
+      avatar={icon && <StyledIcon>{icon}</StyledIcon>}
+      action={<StyledAction>{action}</StyledAction>}
+      title={<StyledTitle>{title}</StyledTitle>}
+      subheader={subheader}
+      // disableTypography={false}
+      // titleTypographyProps={{ variant: "h1", color: "red" }}
+      // subheaderTypographyProps={{ variant: "subtitle1" }}
+    />
+  );
+}
 
 export default CardHeader;

@@ -72,7 +72,7 @@ const getStartIcon = ({
     [T, () => null],
   ])();
 
-const FeedbackButton = ({
+function FeedbackButton({
   isLoading: initialIsLoading = false,
   isSuccess: initialIsSuccess = false,
   isFailure: initialIsFailure = false,
@@ -84,7 +84,7 @@ const FeedbackButton = ({
   variant,
   fullWidth,
   size,
-}: FeedbackButtonProps) => {
+}: FeedbackButtonProps) {
   const [states, setStates] = useState({
     isLoading: initialIsLoading,
     isSuccess: initialIsSuccess,
@@ -171,22 +171,18 @@ const FeedbackButton = ({
   const startIcon = getStartIcon({ isLoading, isSuccess, isFailure });
 
   return (
-    <>
-      <Button
-        variant={variant}
-        fullWidth={fullWidth}
-        onClick={handleClick}
-        size={size}
-      >
-        <IconContainer $isActive={Boolean(startIcon)}>
-          {startIcon}
-        </IconContainer>
-        <Label $isActive={Boolean(startIcon)}>
-          {shouldDisplayLoadingLabel ? loadingLabel : children}
-        </Label>
-      </Button>
-    </>
+    <Button
+      variant={variant}
+      fullWidth={fullWidth}
+      onClick={handleClick}
+      size={size}
+    >
+      <IconContainer $isActive={Boolean(startIcon)}>{startIcon}</IconContainer>
+      <Label $isActive={Boolean(startIcon)}>
+        {shouldDisplayLoadingLabel ? loadingLabel : children}
+      </Label>
+    </Button>
   );
-};
+}
 
 export default FeedbackButton;

@@ -7,7 +7,7 @@ type ItemProps = {
   isSelected: boolean;
 };
 
-const Item = ({ route, isSmall, isSelected }: ItemProps) => {
+function Item({ route, isSmall, isSelected }: ItemProps) {
   return (
     <StyledNavLink
       to={route.path}
@@ -26,6 +26,6 @@ const Item = ({ route, isSmall, isSelected }: ItemProps) => {
       </Label>
     </StyledNavLink>
   );
-};
+}
 
 export default Item;

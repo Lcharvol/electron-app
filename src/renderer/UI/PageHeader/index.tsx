@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 2rem;
 `;
-const PageHeader = ({ title, subTitle }: PageHeaderProps) => {
+function PageHeader({ title, subTitle }: PageHeaderProps) {
   return (
     <Container>
       {title && <Typography variant="h6">{title}</Typography>}
@@ -23,6 +23,6 @@ const PageHeader = ({ title, subTitle }: PageHeaderProps) => {
       )}
     </Container>
   );
-};
+}
 
 export default PageHeader;

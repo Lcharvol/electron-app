@@ -30,7 +30,7 @@ const items = [
   },
 ];
 
-const Settings = () => {
+function Settings() {
   return (
     <>
       <PageHeader title="Settings" subTitle="Update all your settings" />
@@ -39,6 +39,6 @@ const Settings = () => {
       </Card>
     </>
   );
-};
+}
 
 export default Settings;

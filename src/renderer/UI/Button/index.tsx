@@ -10,11 +10,13 @@ declare module '@mui/material/Button' {
     primary: true;
   }
 }
+
 export interface ButtonProps extends MuiButtonProps {
   children: ReactNode;
   startIcon?: ReactNode;
   variant?: 'primary' | 'secondary' | 'white' | 'outlined' | 'searchBar';
 }
+
 function Button({
   children,
   onClick,

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Table, Box, Chip } from '@/UI';
 import moment from 'moment';
 import { mdiCircleSlice8 } from '@mdi/js';
 import { Icon } from '@mdi/react';
+import { Table, Box, Chip } from '@/UI';
 import colors from '@/colors';
 
 const columns = [
@@ -53,12 +53,12 @@ const data = [
   },
 ];
 
-const ReviewAppTable = () => {
+function ReviewAppTable() {
   return (
     <Box sx={{ p: 2 }}>
       <Table columns={columns} data={data} />
     </Box>
   );
-};
+}
 
 export default ReviewAppTable;

@@ -9,7 +9,7 @@ interface TabPanelProps {
   children: ReactNode;
 }
 
-const TabPanel = ({ children, value, index }: TabPanelProps) => {
+function TabPanel({ children, value, index }: TabPanelProps) {
   return (
     <div
       role="tabpanel"
@@ -20,7 +20,7 @@ const TabPanel = ({ children, value, index }: TabPanelProps) => {
       {value === index && <Box>{children}</Box>}
     </div>
   );
-};
+}
 
 type ItemProps = {
   label: string;
@@ -30,7 +30,7 @@ interface TabsProps {
   items: ItemProps[];
 }
 
-const Tabs = ({ items }: TabsProps) => {
+function Tabs({ items }: TabsProps) {
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -50,6 +50,6 @@ const Tabs = ({ items }: TabsProps) => {
       </TabPanel>
     </Box>
   );
-};
+}
 
 export default Tabs;

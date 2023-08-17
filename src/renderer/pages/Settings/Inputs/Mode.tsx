@@ -1,10 +1,10 @@
-import { Autocomplete, Box } from '@/UI';
 import { Icon } from '@mdi/react';
-import useColorMode from '@/contexts/colorMode';
 import { mdiWeatherNight, mdiThemeLightDark, mdiWeatherSunny } from '@mdi/js';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import useColorMode from '@/contexts/colorMode';
+import { Autocomplete, Box } from '@/UI';
 
-const Mode = () => {
+function Mode() {
   const colorMode = useColorMode();
   const systemePreferedMode = useMediaQuery('(prefers-color-scheme: dark)')
     ? 'dark'
@@ -53,6 +53,6 @@ const Mode = () => {
       )}
     />
   );
-};
+}
 
 export default Mode;

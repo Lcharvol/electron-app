@@ -7,22 +7,24 @@ import { AppSidenav, AppHeader } from '@/containers';
 import { fakeUser } from '@/faker';
 import { Button, PageLayout } from '@/UI';
 
-const Layout = ({ children }: { children: ReactNode }) => (
-  <PageLayout menu={<AppSidenav user={fakeUser} />} header={<AppHeader />}>
-    {children}
-  </PageLayout>
-);
+function Layout({ children }: { children: ReactNode }) {
+  return (
+    <PageLayout menu={<AppSidenav user={fakeUser} />} header={<AppHeader />}>
+      {children}
+    </PageLayout>
+  );
+}
 
 // As the router is wrapped with the provider,
 // we can use our hook to check for a logged in user.
-const ProtectedRoute = ({ children }: { children: ReactNode }): JSX.Element => {
+function ProtectedRoute({ children }: { children: ReactNode }): JSX.Element {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" />;
 
   return <>{children}</>;
-};
+}
 
-const Router = () => {
+function Router() {
   const { logout } = useAuth();
   return (
     <Suspense fallback={<div />}>
@@ -89,6 +91,6 @@ const Router = () => {
       </Routes>
     </Suspense>
   );
-};
+}
 
 export default Router;

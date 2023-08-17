@@ -1,3 +1,9 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import InputAdornment from '@mui/material/InputAdornment';
+import { Icon } from '@mdi/react';
+import { mdiMagnify, mdiHistory } from '@mdi/js';
+import { useTheme } from '@mui/material';
 import {
   SearchBar,
   Dialog,
@@ -9,16 +15,10 @@ import {
   Box,
   List,
 } from '@/UI';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Icon } from '@mdi/react';
-import { mdiMagnify, mdiHistory } from '@mdi/js';
-import { useTheme } from '@mui/material';
 import SearchItem from './SearchItem';
 import matchingItems from './matchingItems';
 
-const GlobalSearch = () => {
+function GlobalSearch() {
   const theme = useTheme();
   const [results, setResults] = useState<any[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -99,6 +99,6 @@ const GlobalSearch = () => {
       </Dialog>
     </>
   );
-};
+}
 
 export default GlobalSearch;

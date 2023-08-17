@@ -6,7 +6,7 @@ interface ListProps {
   items: any[];
   renderItem: (item: any) => ReactNode;
 }
-const List = ({ items, renderItem }: ListProps) => {
+function List({ items, renderItem }: ListProps) {
   return (
     <MuiList>
       {items.map((item, index) => (
@@ -16,6 +16,6 @@ const List = ({ items, renderItem }: ListProps) => {
       ))}
     </MuiList>
   );
-};
+}
 
 export default List;

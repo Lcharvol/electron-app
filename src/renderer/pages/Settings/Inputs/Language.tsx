@@ -1,5 +1,5 @@
-import { Autocomplete, Box } from '@/UI';
 import i18next from 'i18next';
+import { Autocomplete, Box } from '@/UI';
 
 const options = [
   {
@@ -17,7 +17,7 @@ const options = [
     value: 'en',
   },
 ];
-const Language = () => {
+function Language() {
   const onChange = (event, newValue) => {
     i18next.changeLanguage(newValue?.value);
   };
@@ -45,6 +45,6 @@ const Language = () => {
       )}
     />
   );
-};
+}
 
 export default Language;

@@ -1,7 +1,7 @@
-import { IconButton, Badge, Tooltip } from '@/UI';
 import styled from 'styled-components';
 import { mdiBellOutline } from '@mdi/js';
 import { useTranslation } from 'react-i18next';
+import { IconButton, Badge, Tooltip } from '@/UI';
 import UserDropDown from './UserDropDown';
 import GlobalSearch from '../GlobalSearch';
 
@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 `;
 
-const AppHeader = () => {
+function AppHeader() {
   const { t } = useTranslation();
   return (
     <Container>
@@ -31,6 +31,6 @@ const AppHeader = () => {
       <UserDropDown />
     </Container>
   );
-};
+}
 
 export default AppHeader;

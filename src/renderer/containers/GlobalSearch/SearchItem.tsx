@@ -1,8 +1,8 @@
 import styled, { useTheme } from 'styled-components';
-import { Typography, Stack, Card, Divider } from '@/UI';
 import { Icon } from '@mdi/react';
 import { T } from 'ramda';
 import { ReactNode } from 'react';
+import { Typography, Stack, Card, Divider } from '@/UI';
 
 const Container = styled(Card)`
   display: flex;

@@ -1,5 +1,5 @@
-import { IconButton, TextField } from '@/UI';
 import { mdiCogOutline } from '@mdi/js';
+import { IconButton, TextField } from '@/UI';
 import Language from './Inputs/Language';
 import Mode from './Inputs/Mode';
 

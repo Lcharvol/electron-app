@@ -3,7 +3,7 @@ import React from 'react';
 import { PageHeader, Card, Tabs } from '@/UI';
 import ReviewAppTable from './ReviewAppTable';
 
-const Projects = () => {
+function Projects() {
   return (
     <>
       <PageHeader title="My Review Apps" />
@@ -18,6 +18,6 @@ const Projects = () => {
       </Card>
     </>
   );
-};
+}
 
 export default Projects;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Chip, Grid } from '@/UI';
 import { Icon } from '@mdi/react';
 import { mdiCheck } from '@mdi/js';
+import { Chip, Grid } from '@/UI';
 
 const services = [
   {
@@ -10,7 +10,7 @@ const services = [
   },
 ];
 
-const ServicesHealthCheck = () => {
+function ServicesHealthCheck() {
   return (
     <Grid container spacing={2} justifyContent="flex-end">
       {services.map((service) => (
@@ -24,6 +24,6 @@ const ServicesHealthCheck = () => {
       ))}
     </Grid>
   );
-};
+}
 
 export default ServicesHealthCheck;

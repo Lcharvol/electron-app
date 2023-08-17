@@ -4,7 +4,7 @@ import MuiTextField, {
 
 export type TextFieldProps = MuiTextFieldProps;
 
-const TextField = ({
+function TextField({
   variant,
   label,
   placeholder,
@@ -17,7 +17,7 @@ const TextField = ({
   disabled,
   autoFocus,
   onChange,
-}: MuiTextFieldProps) => {
+}: MuiTextFieldProps) {
   return (
     <MuiTextField
       fullWidth={fullWidth}
@@ -34,6 +34,6 @@ const TextField = ({
       onChange={onChange}
     />
   );
-};
+}
 
 export default TextField;

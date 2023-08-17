@@ -6,7 +6,7 @@ const BlurryDialog = styled(MuiDialog)<DialogProps>(() => ({
   backdropFilter: 'blur(3px)',
 }));
 
-const Dialog = ({
+function Dialog({
   open,
   onClose,
   children,
@@ -14,7 +14,7 @@ const Dialog = ({
   header,
   footer,
   fullWidth,
-}: DialogProps) => {
+}: DialogProps) {
   return (
     <BlurryDialog
       open={open}
@@ -26,6 +26,6 @@ const Dialog = ({
       {children}
     </BlurryDialog>
   );
-};
+}
 
 export default Dialog;

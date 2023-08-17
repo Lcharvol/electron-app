@@ -1,7 +1,7 @@
-import { Grid, Typography, FeedbackButton } from '@/UI';
 import styled from 'styled-components';
-import colors from '@/colors';
 import { mdiApple, mdiGoogle } from '@mdi/js';
+import { Grid, Typography, FeedbackButton } from '@/UI';
+import colors from '@/colors';
 import { useNotification } from '@/hooks';
 
 const StyledButton = styled(FeedbackButton)`
@@ -12,7 +12,7 @@ interface HomeProps {
   goToNextStep?: () => void;
   login: (data: { email: string; password: string }) => void;
 }
-const Home = ({ goToNextStep, login }: HomeProps) => {
+function Home({ goToNextStep, login }: HomeProps) {
   const { openNotification } = useNotification();
 
   return (
@@ -69,6 +69,6 @@ const Home = ({ goToNextStep, login }: HomeProps) => {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Home;

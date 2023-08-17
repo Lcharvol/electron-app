@@ -9,6 +9,7 @@ interface AvatarProps {
   variant?: 'square' | 'circular' | 'rounded' | undefined;
   sx?: SxProps;
 }
+
 function Avatar({ alt, src, children, variant, sx }: AvatarProps) {
   return (
     <MuiAvatar alt={alt} src={src} variant={variant} sx={sx}>

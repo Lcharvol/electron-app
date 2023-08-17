@@ -7,7 +7,7 @@ import {
 
 import { useTranslation } from 'react-i18next';
 import { constantRoutes } from '@/constants';
-import { Sidenav, Card, CardMedia } from '@/UI';
+import { Sidenav } from '@/UI';
 import UserHeader from '../UserHeader';
 
 interface AppSidenavProps {
@@ -15,7 +15,7 @@ interface AppSidenavProps {
   isSmall?: boolean;
 }
 
-const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
+function AppSidenav({ user, isSmall = false }: AppSidenavProps) {
   const { t } = useTranslation();
 
   const routes = [
@@ -59,6 +59,6 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       // }
     />
   );
-};
+}
 
 export default AppSidenav;

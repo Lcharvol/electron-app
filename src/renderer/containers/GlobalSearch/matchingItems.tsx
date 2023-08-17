@@ -1,8 +1,8 @@
-import { constantRoutes } from '@/constants';
 import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { mdiNoteOutline, mdiCogOutline } from '@mdi/js';
 import styled from 'styled-components';
+import { constantRoutes } from '@/constants';
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;

@@ -5,7 +5,7 @@ import Home from './Home';
 import { Container, Content } from './styles';
 import Subscribe from './Subscribe';
 
-const Login = () => {
+function Login() {
   const { user, loading, error, login, signUp, logout } = useAuth();
   const pages = [
     {
@@ -24,6 +24,6 @@ const Login = () => {
       </Content>
     </Container>
   );
-};
+}
 
 export default Login;

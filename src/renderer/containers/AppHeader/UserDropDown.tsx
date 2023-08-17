@@ -1,20 +1,12 @@
 import React from 'react';
-import useAuth from '@/contexts/auth';
-import {
-  IconButton,
-  Avatar,
-  Menu,
-  Typography,
-  Divider,
-  Box,
-  Stack,
-} from '@/UI';
 import { useTranslation } from 'react-i18next';
 import { mdiLogout, mdiCog } from '@mdi/js';
 import { useNavigate } from 'react-router-dom';
+import { IconButton, Avatar, Menu, Typography, Stack } from '@/UI';
+import useAuth from '@/contexts/auth';
 import { constantRoutes } from '@/constants';
 
-const UserDropDown = () => {
+function UserDropDown() {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { t } = useTranslation();
@@ -72,6 +64,6 @@ const UserDropDown = () => {
       />
     </div>
   );
-};
+}
 
 export default UserDropDown;

@@ -2,13 +2,13 @@ import React from 'react';
 
 import { PageHeader, Card } from '@/UI';
 
-const Projects = () => {
+function Projects() {
   return (
     <>
       <PageHeader title="Projects" />
       <Card />
     </>
   );
-};
+}
 
 export default Projects;

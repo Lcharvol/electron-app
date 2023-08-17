@@ -1,9 +1,9 @@
 import MapBox, { Marker } from 'react-map-gl';
-import useColorMode from '@/contexts/colorMode';
 import { Icon } from '@mdi/react';
 import { mdiHomeCircleOutline } from '@mdi/js';
 import { useTheme } from 'styled-components';
 import { useMemo } from 'react';
+import useColorMode from '@/contexts/colorMode';
 import { MarkersType } from './types';
 
 const accessToken =
@@ -13,7 +13,7 @@ interface MapProps {
   markers?: MarkersType;
 }
 
-const Map = ({ markers }: MapProps) => {
+function Map({ markers }: MapProps) {
   const { colorMode } = useColorMode();
   const theme = useTheme();
   const isDark = colorMode === 'dark';
@@ -53,6 +53,6 @@ const Map = ({ markers }: MapProps) => {
       {memoedMarkers}
     </MapBox>
   );
-};
+}
 
 export default Map;

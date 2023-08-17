@@ -16,13 +16,13 @@ export interface CardProps {
   hasHeaderDivider?: boolean;
 }
 
-const Card = ({
+function Card({
   children,
   header,
   hasHeaderDivider,
   actions,
   ...props
-}: CardProps) => {
+}: CardProps) {
   return (
     <MuiCard {...props}>
       {header}
@@ -31,6 +31,6 @@ const Card = ({
       {actions && <StyledActions>{actions}</StyledActions>}
     </MuiCard>
   );
-};
+}
 
 export default Card;

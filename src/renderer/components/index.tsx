@@ -1,3 +1,3 @@
-import CreditCard from "./CreditCard";
+import CreditCard from './CreditCard';
 
 export { CreditCard };

@@ -46,7 +46,7 @@ export type AreaProps = {
   margin?: { top: number; right: number; bottom: number; left: number };
 };
 
-const Areas = ({
+function Areas({
   width,
   height,
   margin = { top: 0, right: 0, bottom: 0, left: 0 },
@@ -55,7 +55,7 @@ const Areas = ({
   tooltipData,
   tooltipTop = 0,
   tooltipLeft = 0,
-}: AreaProps & WithTooltipProvidedProps<TooltipData>) => {
+}: AreaProps & WithTooltipProvidedProps<TooltipData>) {
   // bounds
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -227,6 +227,6 @@ const Areas = ({
       )}
     </div>
   );
-};
+}
 
 export default withTooltip<AreaProps, TooltipData>(Areas);

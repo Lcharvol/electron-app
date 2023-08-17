@@ -18,11 +18,7 @@ interface PageStepperProps {
 const getPageFromStep = ({ step, pages }) =>
   pages.find(({ pageNumber }) => pageNumber === step);
 
-const PageStepper = ({
-  direction = 'row',
-  pages,
-  layout,
-}: PageStepperProps) => {
+function PageStepper({ direction = 'row', pages, layout }: PageStepperProps) {
   const [actualStep, setActualStep] = useState<number>(0);
   const goToNextStep = () => setActualStep(actualStep + 1);
   const goToPreviousStep = () => setActualStep(actualStep - 1);
@@ -46,6 +42,6 @@ const PageStepper = ({
       ))}
     </Container>
   );
-};
+}
 
 export default PageStepper;
