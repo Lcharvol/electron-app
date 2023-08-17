@@ -15,6 +15,13 @@ module.exports = {
         extensions: ['.tsx', '.ts'],
       },
     ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
   plugins: ['@typescript-eslint'],
   parserOptions: {
