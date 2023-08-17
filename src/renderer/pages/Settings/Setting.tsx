@@ -26,7 +26,7 @@ interface SettingProps extends SettingType {
   isLast?: boolean;
 }
 
-function Setting({ label, description, action, isLast }: SettingProps) {
+const Setting = ({ label, description, action, isLast }: SettingProps) => {
   return (
     <>
       <Container>
@@ -43,6 +43,6 @@ function Setting({ label, description, action, isLast }: SettingProps) {
       {!isLast && <Divider />}
     </>
   );
-}
+};
 
 export default Setting;

@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 `;
 
-function AppHeader() {
+const AppHeader = () => {
   const { t } = useTranslation();
   return (
     <Container>
@@ -31,6 +31,6 @@ function AppHeader() {
       <UserDropDown />
     </Container>
   );
-}
+};
 
 export default AppHeader;

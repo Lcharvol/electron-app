@@ -53,12 +53,12 @@ const data = [
   },
 ];
 
-function ReviewAppTable() {
+const ReviewAppTable = () => {
   return (
     <Box sx={{ p: 2 }}>
       <Table columns={columns} data={data} />
     </Box>
   );
-}
+};
 
 export default ReviewAppTable;

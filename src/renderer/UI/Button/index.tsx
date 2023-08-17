@@ -17,7 +17,7 @@ export interface ButtonProps extends MuiButtonProps {
   variant?: 'primary' | 'secondary' | 'white' | 'outlined' | 'searchBar';
 }
 
-function Button({
+const Button = ({
   children,
   onClick,
   variant,
@@ -25,7 +25,7 @@ function Button({
   startIcon,
   endIcon,
   size,
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <MuiButton
       onClick={onClick}
@@ -39,6 +39,6 @@ function Button({
       {children}
     </MuiButton>
   );
-}
+};
 
 export default Button;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Button, PageLayout } from '@/UI';
 
-function Subscribe({ goToPreviousStep }) {
+const Subscribe = ({ goToPreviousStep }) => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={6}>
@@ -9,6 +9,6 @@ function Subscribe({ goToPreviousStep }) {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default Subscribe;

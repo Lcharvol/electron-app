@@ -14,12 +14,12 @@ interface SearchBarProps {
   onChange?: (event) => void;
 }
 
-function SearchBar({
+const SearchBar = ({
   onClick,
   hasShortCut,
   isButton,
   onChange,
-}: SearchBarProps) {
+}: SearchBarProps) => {
   const theme = useTheme();
   const { t } = useTranslation();
 
@@ -58,6 +58,6 @@ function SearchBar({
       }}
     />
   );
-}
+};
 
 export default SearchBar;

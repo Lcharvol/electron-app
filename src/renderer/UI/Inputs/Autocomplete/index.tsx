@@ -21,12 +21,12 @@ interface AutocompleteProps
   label?: string;
 }
 
-function Autocomplete({
+const Autocomplete = ({
   options,
   label,
   renderOption,
   onChange,
-}: AutocompleteProps) {
+}: AutocompleteProps) => {
   return (
     <MuiAutocomplete
       options={options}
@@ -44,6 +44,6 @@ function Autocomplete({
       )}
     />
   );
-}
+};
 
 export default Autocomplete;

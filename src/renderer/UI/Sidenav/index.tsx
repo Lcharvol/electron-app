@@ -15,13 +15,13 @@ interface SidenavProps {
   isSmall?: boolean;
 }
 
-function Sidenav({
+const Sidenav = ({
   routes = [],
   topNode,
   isSmall,
   actions,
   body,
-}: SidenavProps) {
+}: SidenavProps) => {
   const location = useLocation();
   const [selectedItem, setSelectedItem] = useState('');
   useEffect(() => {
@@ -60,6 +60,6 @@ function Sidenav({
       <Divider orientation="vertical" />
     </>
   );
-}
+};
 
 export default Sidenav;

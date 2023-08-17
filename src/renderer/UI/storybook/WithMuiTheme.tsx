@@ -22,7 +22,7 @@ const ThemeBlock = styled.div<{ left?: boolean; fill?: boolean }>(
     background: ${theme.palette.background.paper};
   `
 );
-function WithMuiTheme(Story, context) {
+const WithMuiTheme = (Story, context) => {
   const { theme: themeKey } = context.globals;
   const darkTheme = createTheme(getTheme('dark'));
   const lightTheme = createTheme(getTheme('light'));
@@ -56,6 +56,6 @@ function WithMuiTheme(Story, context) {
       </MuiThemeProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default WithMuiTheme;

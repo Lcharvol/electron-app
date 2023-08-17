@@ -12,7 +12,7 @@ interface HomeProps {
   goToNextStep?: () => void;
   login: (data: { email: string; password: string }) => void;
 }
-function Home({ goToNextStep, login }: HomeProps) {
+const Home = ({ goToNextStep, login }: HomeProps) => {
   const { openNotification } = useNotification();
 
   return (
@@ -69,6 +69,6 @@ function Home({ goToNextStep, login }: HomeProps) {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default Home;

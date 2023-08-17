@@ -1,7 +1,7 @@
 import { CardMedia, Card, Typography, Button, Box } from '@/UI';
 import { WalletMap } from '@/containers';
 
-function Home() {
+const Home = () => {
   return (
     <Box sx={{ height: '100vh', position: 'relative' }}>
       <Box sx={{ mb: '2rem' }}>
@@ -28,6 +28,6 @@ function Home() {
       <WalletMap />
     </Box>
   );
-}
+};
 
 export default Home;

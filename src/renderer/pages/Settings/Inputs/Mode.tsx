@@ -4,7 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import useColorMode from '@/contexts/colorMode';
 import { Autocomplete, Box } from '@/UI';
 
-function Mode() {
+const Mode = () => {
   const colorMode = useColorMode();
   const systemePreferedMode = useMediaQuery('(prefers-color-scheme: dark)')
     ? 'dark'
@@ -53,6 +53,6 @@ function Mode() {
       )}
     />
   );
-}
+};
 
 export default Mode;

@@ -25,7 +25,7 @@ const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.palette.font.disabled};
 `;
 
-function ShortCut({ keys, action }: ShortCutProps) {
+const ShortCut = ({ keys, action }: ShortCutProps) => {
   const keyDownEvent = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const hasMetaKey = keys.includes('meta');
     if (
@@ -50,6 +50,6 @@ function ShortCut({ keys, action }: ShortCutProps) {
       <Typography variant="caption">{label}</Typography>
     </Container>
   );
-}
+};
 
 export default ShortCut;

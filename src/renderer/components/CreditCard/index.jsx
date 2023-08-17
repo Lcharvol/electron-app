@@ -57,7 +57,7 @@ const Name = styled(Typography)`
 const CardNumber = styled(Typography)`
   letter-spacing: 1.5;
 `;
-function CreditCard({ depth, onCardClick, cardBrand: initialCardBrand }) {
+const CreditCard = ({ depth, onCardClick, cardBrand: initialCardBrand }) => {
   const [cardBrand, setCardBrand] = useState(
     initialCardBrand || CARD_BRANDS.VISA
   );
@@ -104,7 +104,7 @@ function CreditCard({ depth, onCardClick, cardBrand: initialCardBrand }) {
         )}
     </Container>
   );
-}
+};
 
 CreditCard.propTypes = {
   cardBrand: PropTypes.string,

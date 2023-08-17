@@ -6,11 +6,11 @@ interface UserHeaderProps {
   isSmall?: boolean;
 }
 
-function UserHeader({
+const UserHeader = ({
   user,
   hasDivider = false,
   isSmall = false,
-}: UserHeaderProps) {
+}: UserHeaderProps) => {
   return (
     <Grid container spacing={2} alignItems="center" justifyContent="center">
       <Grid
@@ -46,6 +46,6 @@ function UserHeader({
       )}
     </Grid>
   );
-}
+};
 
 export default UserHeader;

@@ -11,13 +11,18 @@ interface IconButtonProps extends MuiIconButtonProps {
   children?: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
-function IconButton({ iconPath, color, children, onClick }: IconButtonProps) {
+const IconButton = ({
+  iconPath,
+  color,
+  children,
+  onClick,
+}: IconButtonProps) => {
   return (
     <MuiIconButton onClick={onClick} color="primary">
       {children}
       {iconPath && <Icon size={0.8} path={iconPath} color={color} />}
     </MuiIconButton>
   );
-}
+};
 
 export default IconButton;

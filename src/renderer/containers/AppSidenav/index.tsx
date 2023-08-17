@@ -15,7 +15,7 @@ interface AppSidenavProps {
   isSmall?: boolean;
 }
 
-function AppSidenav({ user, isSmall = false }: AppSidenavProps) {
+const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
   const { t } = useTranslation();
 
   const routes = [
@@ -59,6 +59,6 @@ function AppSidenav({ user, isSmall = false }: AppSidenavProps) {
       // }
     />
   );
-}
+};
 
 export default AppSidenav;

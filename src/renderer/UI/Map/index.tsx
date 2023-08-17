@@ -13,7 +13,7 @@ interface MapProps {
   markers?: MarkersType;
 }
 
-function Map({ markers }: MapProps) {
+const Map = ({ markers }: MapProps) => {
   const { colorMode } = useColorMode();
   const theme = useTheme();
   const isDark = colorMode === 'dark';
@@ -53,6 +53,6 @@ function Map({ markers }: MapProps) {
       {memoedMarkers}
     </MapBox>
   );
-}
+};
 
 export default Map;

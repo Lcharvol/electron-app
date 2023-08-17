@@ -72,7 +72,7 @@ const getStartIcon = ({
     [T, () => null],
   ])();
 
-function FeedbackButton({
+const FeedbackButton = ({
   isLoading: initialIsLoading = false,
   isSuccess: initialIsSuccess = false,
   isFailure: initialIsFailure = false,
@@ -84,7 +84,7 @@ function FeedbackButton({
   variant,
   fullWidth,
   size,
-}: FeedbackButtonProps) {
+}: FeedbackButtonProps) => {
   const [states, setStates] = useState({
     isLoading: initialIsLoading,
     isSuccess: initialIsSuccess,
@@ -183,6 +183,6 @@ function FeedbackButton({
       </Label>
     </Button>
   );
-}
+};
 
 export default FeedbackButton;

@@ -18,7 +18,7 @@ import {
 import SearchItem from './SearchItem';
 import matchingItems from './matchingItems';
 
-function GlobalSearch() {
+const GlobalSearch = () => {
   const theme = useTheme();
   const [results, setResults] = useState<any[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -99,6 +99,6 @@ function GlobalSearch() {
       </Dialog>
     </>
   );
-}
+};
 
 export default GlobalSearch;

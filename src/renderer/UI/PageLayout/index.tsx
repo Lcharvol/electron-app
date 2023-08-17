@@ -10,7 +10,7 @@ interface PageLayoutProps {
   children?: ReactNode;
   header?: ReactNode;
 }
-function PageLayout({ menu, children, header }: PageLayoutProps) {
+const PageLayout = ({ menu, children, header }: PageLayoutProps) => {
   const [windowWidth] = useWindowSize();
   const isSmall = windowWidth < SMALL_SIDENAV_WINDOW_WITH;
 
@@ -26,6 +26,6 @@ function PageLayout({ menu, children, header }: PageLayoutProps) {
       </PageContent>
     </Content>
   );
-}
+};
 
 export default PageLayout;

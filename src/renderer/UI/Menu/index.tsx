@@ -17,7 +17,7 @@ interface MenuProps {
   anchorEl: null | HTMLElement;
 }
 
-function Menu({ items, open, onClose, onClick, anchorEl }: MenuProps) {
+const Menu = ({ items, open, onClose, onClick, anchorEl }: MenuProps) => {
   const theme = useTheme();
   return (
     <MuiMenu
@@ -42,6 +42,6 @@ function Menu({ items, open, onClose, onClick, anchorEl }: MenuProps) {
       ))}
     </MuiMenu>
   );
-}
+};
 
 export default Menu;

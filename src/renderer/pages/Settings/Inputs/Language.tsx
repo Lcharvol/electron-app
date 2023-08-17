@@ -17,7 +17,7 @@ const options = [
     value: 'en',
   },
 ];
-function Language() {
+const Language = () => {
   const onChange = (event, newValue) => {
     i18next.changeLanguage(newValue?.value);
   };
@@ -45,6 +45,6 @@ function Language() {
       )}
     />
   );
-}
+};
 
 export default Language;

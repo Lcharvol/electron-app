@@ -6,7 +6,7 @@ import { IconButton, Avatar, Menu, Typography, Stack } from '@/UI';
 import useAuth from '@/contexts/auth';
 import { constantRoutes } from '@/constants';
 
-function UserDropDown() {
+const UserDropDown = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { t } = useTranslation();
@@ -64,6 +64,6 @@ function UserDropDown() {
       />
     </div>
   );
-}
+};
 
 export default UserDropDown;

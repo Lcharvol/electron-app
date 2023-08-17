@@ -10,7 +10,7 @@ const services = [
   },
 ];
 
-function ServicesHealthCheck() {
+const ServicesHealthCheck = () => {
   return (
     <Grid container spacing={2} justifyContent="flex-end">
       {services.map((service) => (
@@ -24,6 +24,6 @@ function ServicesHealthCheck() {
       ))}
     </Grid>
   );
-}
+};
 
 export default ServicesHealthCheck;

@@ -9,13 +9,13 @@ const ColorModeContext = createContext<ColorModeContextType>(
   {} as ColorModeContextType
 );
 
-export function ColorModeProvider({
+export const ColorModeProvider = ({
   children,
   initialColorMode,
 }: {
   children: ReactNode;
   initialColorMode?: 'light' | 'dark';
-}) {
+}) => {
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(
     initialColorMode || 'light'
   );
@@ -32,7 +32,7 @@ export function ColorModeProvider({
       {children}
     </ColorModeContext.Provider>
   );
-}
+};
 
 const useColorMode = () => {
   return useContext(ColorModeContext);
