@@ -5,6 +5,7 @@ import {
 import { CssBaseline } from '@mui/material';
 import styled, { ThemeProvider, css } from 'styled-components';
 import { useMemo } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import getTheme from '../../muiTheme';
 
 const ThemeBlock = styled.div<{ left?: boolean; fill?: boolean }>(
@@ -30,31 +31,37 @@ const WithMuiTheme = (Story, context) => {
 
   if (themeKey === 'side-by-side') {
     return (
-      <>
-        <MuiThemeProvider theme={lightTheme}>
-          <CssBaseline />
-          <ThemeBlock left theme={lightTheme}>
-            <Story />
-          </ThemeBlock>
-        </MuiThemeProvider>
-        <MuiThemeProvider theme={darkTheme}>
-          <CssBaseline />
-          <ThemeBlock theme={darkTheme}>
-            <Story />
-          </ThemeBlock>
-        </MuiThemeProvider>
-      </>
+      <BrowserRouter>
+        <ThemeProvider theme={lightTheme}>
+          <MuiThemeProvider theme={lightTheme}>
+            <CssBaseline />
+            <ThemeBlock left theme={lightTheme}>
+              <Story />
+            </ThemeBlock>
+          </MuiThemeProvider>
+        </ThemeProvider>
+        <ThemeProvider theme={darkTheme}>
+          <MuiThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <ThemeBlock theme={darkTheme}>
+              <Story />
+            </ThemeBlock>
+          </MuiThemeProvider>
+        </ThemeProvider>
+      </BrowserRouter>
     );
   }
   return (
-    <ThemeProvider theme={theme}>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <ThemeBlock fill>
-          <Story />
-        </ThemeBlock>
-      </MuiThemeProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          <ThemeBlock fill>
+            <Story />
+          </ThemeBlock>
+        </MuiThemeProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
