@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Avatar from './index';
+import Avatar from '.';
 
-const meta: Meta<typeof Avatar> = { component: Avatar };
+const meta: Meta<typeof Avatar> = {
+  component: Avatar,
+};
 
 type Story = StoryObj<typeof Avatar>;
 
-export const Basic: Story = { args: {} };
+export const Basic: Story = {
+  args: { src: 'https://avatars.githubusercontent.com/u/23408500?v=4' },
+  parameters: {
+    controls: { include: ['variant', 'src', 'children', 'size'] },
+  },
+};
 
 export default meta;

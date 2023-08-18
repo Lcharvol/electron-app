@@ -90,9 +90,11 @@ const getTheme = (mode) => {
           {
             props: { variant: 'outlined' },
             style: {
-              color: isDark ? colors.white : colors.blue.normall,
-              borderColor: isDark ? colors.white : colors.blue.normall,
-              border: 'solid 0.1rem',
+              color: isDark ? colors.white : colors.blue.normal,
+              borderColor: isDark ? colors.white : colors.blue.normal,
+              '&:hover': {
+                borderColor: isDark ? colors.white : colors.blue.normal,
+              },
             },
           },
           {
@@ -118,6 +120,19 @@ const getTheme = (mode) => {
             },
           },
         ],
+      },
+      MuiAvatarGroup: {
+        styleOverrides: {
+          root: {
+            borderColor: 'red',
+          },
+          avatar: {
+            backgroundColor: isDark
+              ? colors.black.veryLight
+              : colors.grey.medium,
+            borderColor: isDark ? colors.black.verydark : colors.white,
+          },
+        },
       },
       MuiDivider: {
         styleOverrides: {
@@ -182,32 +197,13 @@ const getTheme = (mode) => {
         },
         styleOverrides: {
           root: {
-            color: colors.darkFont.normal,
-            borderColor: colors.darkFont.normal,
-            borderRadius: '0.4rem',
+            color: isDark ? colors.darkFont.normal : colors.lightFont.normal,
           },
         },
         variants: [
           {
-            props: { kind: 'success' },
-            style: {
-              color: colors.state.success,
-              borderColor: colors.state.success,
-            },
-          },
-          {
-            props: { kind: 'error' },
-            style: {
-              color: colors.state.error,
-              borderColor: colors.state.error,
-            },
-          },
-          {
-            props: { kind: 'warning' },
-            style: {
-              color: colors.state.warning,
-              borderColor: colors.state.warning,
-            },
+            props: { variant: 'outlined' },
+            style: {},
           },
         ],
       },

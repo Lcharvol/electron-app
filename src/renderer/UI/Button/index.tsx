@@ -4,13 +4,6 @@ import {
 } from '@mui/material';
 import { ReactNode } from 'react';
 
-declare module '@mui/material/Button' {
-  interface ButtonPropsVariantOverrides {
-    white: true;
-    primary: true;
-  }
-}
-
 export interface ButtonProps extends MuiButtonProps {
   children: ReactNode;
   startIcon?: ReactNode;

@@ -29,6 +29,7 @@ import Stack from './Stack';
 import List from './List';
 import Paper from './Paper';
 import Tooltip from './Tooltip';
+import AvatarGroup from './AvatarGroup';
 
 export {
   Button,
@@ -63,4 +64,5 @@ export {
   List,
   Paper,
   Tooltip,
+  AvatarGroup,
 };
