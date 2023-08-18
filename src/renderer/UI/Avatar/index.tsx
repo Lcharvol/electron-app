@@ -2,7 +2,7 @@ import MuiAvatar from '@mui/material/Avatar';
 import { ReactNode } from 'react';
 import { SxProps } from '@mui/material';
 
-interface AvatarProps {
+export interface AvatarProps {
   alt?: string;
   src?: string;
   children?: ReactNode;

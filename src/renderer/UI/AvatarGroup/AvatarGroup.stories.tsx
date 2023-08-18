@@ -17,7 +17,7 @@ export const Basic: Story = {
     ],
   },
   parameters: {
-    controls: { include: ['items', 'max', 'total'] },
+    controls: { include: ['items', 'max', 'total', 'size'] },
   },
 };
 
