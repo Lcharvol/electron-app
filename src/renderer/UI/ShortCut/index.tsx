@@ -8,6 +8,7 @@ const exeptions = [
     symbol: '⌘',
   },
 ];
+
 interface ShortCutProps {
   keys: string[];
   action: () => void;

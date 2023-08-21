@@ -9,6 +9,7 @@ import Sidenav from '.';
 import PageLayout from '../PageLayout';
 
 const meta: Meta<typeof Sidenav> = {
+  title: 'Design System/Components/Sidenav',
   component: Sidenav,
 };
 
@@ -33,7 +34,6 @@ export const Basic: Story = {
         icon: mdiViewGridOutline,
       },
     ],
-    isSmall: false,
   },
   parameters: {
     controls: { include: ['routes'] },

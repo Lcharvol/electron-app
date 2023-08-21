@@ -4,7 +4,10 @@ import { mdiFaceMan } from '@mdi/js';
 import Chip from '.';
 import Avatar from '../Avatar';
 
-const meta: Meta<typeof Chip> = { component: Chip };
+const meta: Meta<typeof Chip> = {
+  title: 'Design System/Components/Chip',
+  component: Chip,
+};
 
 type Story = StoryObj<typeof Chip>;
 

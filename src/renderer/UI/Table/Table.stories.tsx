@@ -4,7 +4,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Table from '.';
 
-const meta: Meta<typeof Table> = { component: Table };
+const meta: Meta<typeof Table> = {
+  title: 'Design System/Components/Table',
+  component: Table,
+};
 
 type Story = StoryObj<typeof Table>;
 

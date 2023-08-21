@@ -5,6 +5,7 @@ import Typography from '../Typography';
 import Box from '../Box';
 
 const meta: Meta<typeof Tabs> = {
+  title: 'Design System/Components/Tabs',
   component: Tabs,
 };
 

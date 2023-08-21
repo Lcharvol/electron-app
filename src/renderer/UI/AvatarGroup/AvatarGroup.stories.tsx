@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import AvatarGroup from '.';
 
 const meta: Meta<typeof AvatarGroup> = {
+  title: 'Design System/Components/AvatarGroup',
   component: AvatarGroup,
 };
 
