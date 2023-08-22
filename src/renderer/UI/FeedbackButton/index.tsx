@@ -1,11 +1,6 @@
-import CircularProgress from '@mui/material/CircularProgress';
-
-import { mdiCheck, mdiCloseCircleOutline } from '@mdi/js';
-import { Icon } from '@mdi/react';
-import { always, cond, T } from 'ramda';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
+import getStartIcon from './utils';
 import Button, { ButtonProps } from '../Button';
 
 export interface FeedbackButtonProps extends ButtonProps {
@@ -21,56 +16,19 @@ export interface FeedbackButtonProps extends ButtonProps {
 
 const IconContainer = styled.div<{ $isActive: boolean }>`
   position: absolute;
-  right: 1rem;
+  right: 0rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
+  width: 3rem;
   opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
   transition: all 0.4s ease-in-out;
 `;
 
 const Label = styled.div<{ $isActive: boolean }>`
-  padding-right: ${({ $isActive }) => ($isActive ? 1 : 0)}rem;
+  padding-right: ${({ $isActive }) => ($isActive ? 2 : -1)}rem;
   transition: all 0.3s ease-in-out;
 `;
-const getStartIcon = ({
-  isLoading,
-  isSuccess,
-  isFailure,
-}: {
-  isLoading: boolean;
-  isSuccess: boolean;
-  isFailure: boolean;
-}) =>
-  cond([
-    [
-      () => isLoading,
-      always(
-        <CircularProgress
-          data-testid="loadingIcon"
-          color="inherit"
-          size="1rem"
-          disableShrink
-        />
-      ),
-    ],
-    [
-      () => isSuccess,
-      always(<Icon data-testid="successIcon" path={mdiCheck} size="1.5rem" />),
-    ],
-    [
-      () => isFailure,
-      always(
-        <Icon
-          data-testid="failureIcon"
-          path={mdiCloseCircleOutline}
-          size="2.2rem"
-        />
-      ),
-    ],
-    [T, () => null],
-  ])();
 
 const FeedbackButton = ({
   isLoading: initialIsLoading = false,
@@ -99,22 +57,22 @@ const FeedbackButton = ({
     });
     handler
       ?.then((res: any) => {
-        setStates((intialStates) => ({
-          ...intialStates,
+        setStates((initialStates) => ({
+          ...initialStates,
           isSuccess: true,
         }));
 
         return res;
       })
       ?.catch(() => {
-        setStates((intialStates) => ({
-          ...intialStates,
+        setStates((initialStates) => ({
+          ...initialStates,
           isFailure: true,
         }));
       })
       ?.finally(() => {
-        setStates((intialStates) => ({
-          ...intialStates,
+        setStates((initialStates) => ({
+          ...initialStates,
           isLoading: false,
         }));
 
@@ -162,7 +120,7 @@ const FeedbackButton = ({
   }, [isFailure]);
 
   const handleClick = () => {
-    if (onClick && !isLoading) {
+    if (onClick && !isLoading && !isSuccess && !isFailure) {
       statesHandler(onClick());
     }
   };

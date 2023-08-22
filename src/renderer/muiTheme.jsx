@@ -80,7 +80,7 @@ const getTheme = (mode) => {
             style: {
               backgroundColor: colors.blue.normal,
               color: colors.white,
-              '&:hover': { backgroundColor: colors.blue.dark },
+              '&:hover': { backgroundColor: colors.blue.medium },
             },
           },
           {
