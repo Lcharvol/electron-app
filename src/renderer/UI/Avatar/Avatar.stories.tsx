@@ -13,12 +13,6 @@ export const Basic: Story = {
   args: { src: 'https://avatars.githubusercontent.com/u/23408500?v=4' },
   parameters: {
     controls: { include: ['variant', 'src', 'children', 'size'] },
-    docs: {
-      description: {
-        story: 'The component doesn’t have built-in spacing by default.',
-        component: 'The header component.',
-      },
-    },
   },
 };
 
