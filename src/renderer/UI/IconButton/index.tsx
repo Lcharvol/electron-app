@@ -1,15 +1,14 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import MuiIconButton, {
   IconButtonProps as MuiIconButtonProps,
 } from '@mui/material/IconButton';
 import { Icon } from '@mdi/react';
-import colors from '@/colors';
 
 interface IconButtonProps extends MuiIconButtonProps {
   iconPath?: string;
   color?: string;
   children?: ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onClick?: () => void;
 }
 const IconButton = ({
   iconPath,
