@@ -1,8 +1,14 @@
+import { createTheme } from '@mui/material/styles';
 import colors from '@/colors';
 
 const getTheme = (mode) => {
   const isDark = mode === 'dark';
   return {
+    shadows: [
+      ...createTheme({}).shadows.map((shadow, i) =>
+        i === 1 ? 'rgba(0, 0, 0, 0.24) 0px 3px 8px' : shadow
+      ),
+    ],
     shape: {
       borderRadius: '0.3rem',
     },
@@ -98,6 +104,16 @@ const getTheme = (mode) => {
             },
           },
           {
+            props: { variant: 'outlined-white' },
+            style: {
+              color: colors.white,
+              border: `solid 0.1rem ${colors.white}`,
+              '&:hover': {
+                borderColor: colors.white,
+              },
+            },
+          },
+          {
             props: { variant: 'searchBar' },
             style: {
               color: isDark
@@ -144,9 +160,6 @@ const getTheme = (mode) => {
         },
       },
       MuiCard: {
-        defaultProps: {
-          elevation: 0,
-        },
         styleOverrides: {
           root: {
             borderRadius: '0.5rem',
@@ -154,6 +167,14 @@ const getTheme = (mode) => {
           },
         },
         variants: [
+          {
+            props: { variant: 'outlined' },
+            style: {
+              borderColor: isDark
+                ? colors.black.veryLight
+                : colors.grey.veryLight,
+            },
+          },
           {
             props: { variant: 'filled' },
             style: {

@@ -47,16 +47,6 @@ const AppSidenav = ({ user, isSmall = false }: AppSidenavProps) => {
       routes={routes}
       isSmall={isSmall}
       topNode={<UserHeader user={user} hasDivider isSmall={isSmall} />}
-      // body={
-      //   !isSmall && (
-      //     <Card variant="filled">
-      //       <CardMedia
-      //         component="img"
-      //         src="https://www.pngall.com/wp-content/uploads/12/Illustration-PNG.png"
-      //       />
-      //     </Card>
-      //   )
-      // }
     />
   );
 };

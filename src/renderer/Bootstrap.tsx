@@ -3,7 +3,7 @@ import {
   createTheme,
 } from '@mui/material/styles';
 import styled, { ThemeProvider } from 'styled-components';
-import React, { ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '@/contexts/auth';
 import colors from '@/colors';

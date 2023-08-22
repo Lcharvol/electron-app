@@ -1,19 +1,18 @@
-import MuiCard from '@mui/material/Card';
+import MuiCard, { CardProps as MuiCardProps } from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import styled from 'styled-components';
-
+import { ReactNode } from 'react';
+import CardMedia from '@mui/material/CardMedia';
 import Divider from '../Divider';
-
-const StyledActions = styled(CardActions)`
-  padding: 2rem;
-`;
 
 export interface CardProps {
   children?: ReactNode;
   header?: ReactNode;
   actions?: ReactNode;
   hasHeaderDivider?: boolean;
+  variant: MuiCardProps['variant'];
+  imgUrl?: string;
+  imgHeight?: number;
 }
 
 const Card = ({
@@ -21,14 +20,23 @@ const Card = ({
   header,
   hasHeaderDivider,
   actions,
-  ...props
+  variant,
+  imgUrl,
+  imgHeight,
 }: CardProps) => {
   return (
-    <MuiCard {...props}>
+    <MuiCard variant={variant}>
       {header}
+      {imgUrl && (
+        <CardMedia
+          image={imgUrl}
+          sx={{ height: imgHeight || 140 }}
+          component="img"
+        />
+      )}
       {hasHeaderDivider && <Divider />}
       <CardContent>{children}</CardContent>
-      {actions && <StyledActions>{actions}</StyledActions>}
+      {actions && <CardActions>{actions}</CardActions>}
     </MuiCard>
   );
 };

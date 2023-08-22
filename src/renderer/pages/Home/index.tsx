@@ -9,7 +9,7 @@ const Home = () => {
           sx={{ position: 'relative' }}
           variant="filled"
           hasHeaderDivider
-          actions={<Button variant="outlined">Upgrade</Button>}
+          actions={<Button variant="outlined-white">Upgrade</Button>}
         >
           <Typography variant="h4" fontWeight="medium" color="white">
             Upgrade your plan

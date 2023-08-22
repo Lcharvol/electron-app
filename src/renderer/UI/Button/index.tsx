@@ -7,7 +7,13 @@ import { ReactNode } from 'react';
 export interface ButtonProps extends MuiButtonProps {
   children: ReactNode;
   startIcon?: ReactNode;
-  variant?: 'primary' | 'secondary' | 'white' | 'outlined' | 'searchBar';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'white'
+    | 'outlined'
+    | 'searchBar'
+    | 'outlined-white';
 }
 
 const Button = ({

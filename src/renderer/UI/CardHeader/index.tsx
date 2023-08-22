@@ -1,16 +1,11 @@
 import MuiCardHeader from '@mui/material/CardHeader';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+
 import styled from 'styled-components';
 
 const StyledContainer = styled(MuiCardHeader)`
   min-height: 3rem;
   position: relative;
-  /* width: 100%; */
-`;
-
-const StyledTitle = styled(Typography)`
-  text-transform: uppercase;
 `;
 
 const StyledIcon = styled.div`
@@ -38,7 +33,7 @@ const CardHeader = ({ title, subheader, icon, action }: CardHeaderProps) => {
     <StyledContainer
       avatar={icon && <StyledIcon>{icon}</StyledIcon>}
       action={<StyledAction>{action}</StyledAction>}
-      title={<StyledTitle>{title}</StyledTitle>}
+      title={<Typography>{title}</Typography>}
       subheader={subheader}
       // disableTypography={false}
       // titleTypographyProps={{ variant: "h1", color: "red" }}
