@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ShortCut from '.';
 
 const meta: Meta<typeof ShortCut> = {
-  title: 'Design System/Components/ShortCut',
+  title: 'Components/ShortCut',
   component: ShortCut,
 };
 

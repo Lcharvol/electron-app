@@ -6,7 +6,7 @@ import Typography from '../Typography';
 import Button from '../Button';
 
 const meta: Meta<typeof Card> = {
-  title: 'Design System/Components/Card',
+  title: 'Components/Card',
   component: Card,
 };
 

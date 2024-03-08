@@ -9,7 +9,7 @@ import Sidenav from '.';
 import PageLayout from '../PageLayout';
 
 const meta: Meta<typeof Sidenav> = {
-  title: 'Design System/Components/Sidenav',
+  title: 'Components/Sidenav',
   component: Sidenav,
 };
 

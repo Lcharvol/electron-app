@@ -6,7 +6,7 @@ import Badge from '.';
 import Button from '../Button';
 
 const meta: Meta<typeof Badge> = {
-  title: 'Design System/Components/Badge',
+  title: 'Components/Badge',
   component: Badge,
 };
 

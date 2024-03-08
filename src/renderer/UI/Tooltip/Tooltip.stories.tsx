@@ -4,7 +4,7 @@ import Tooltip from '.';
 import Button from '../Button';
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Design System/Components/Tooltip',
+  title: 'Components/Tooltip',
   component: Tooltip,
 };
 

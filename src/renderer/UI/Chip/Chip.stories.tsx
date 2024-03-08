@@ -5,7 +5,7 @@ import Chip from '.';
 import Avatar from '../Avatar';
 
 const meta: Meta<typeof Chip> = {
-  title: 'Design System/Components/Chip',
+  title: 'Components/Chip',
   component: Chip,
 };
 

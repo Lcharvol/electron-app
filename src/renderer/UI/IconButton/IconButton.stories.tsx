@@ -3,7 +3,7 @@ import { mdiDotsVertical } from '@mdi/js';
 import IconButton from '.';
 
 const meta: Meta<typeof IconButton> = {
-  title: 'Design System/Components/IconButton',
+  title: 'Components/IconButton',
   component: IconButton,
 };
 
